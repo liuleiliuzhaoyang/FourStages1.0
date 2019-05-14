@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>回款明细</title>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link href="css/home.css" rel="stylesheet" type="text/css" />
+		<!-- <link href="css/narrow.css" rel="stylesheet" type="text/css" /> -->
+		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/site.css" rel="stylesheet" type="text/css" />
+		<link href="css/style2.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/ppcommon.js"></script>
+		<script type="text/javascript" src="js/jquery.date_input.pack.js"></script>
+		<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+	</head>
+	<script type="text/javascript">
+		$(function() {
+			$(".p_tp_del").click(function() {
+				$(".landing").slideDown(200)
+			});
+			$(".login-close").click(function() {
+				$(".landing").slideUp(200)
+			});
+		})
+
+		function mOver2(obj2) {
+			var obj2 = document.getElementById('sh_table_i');
+			obj2.style.display = 'block';
+		}
+
+		function mOut2(obj2) {
+			var obj2 = document.getElementById('sh_table_i');
+			obj2.style.display = 'none';
+		}
+	</script>
+
+	<body>
+		<div class="page">
+			<!--header-->
+			<div class="header">
+				<div class="top">
+					<div class="top_con">
+						<ul class="top_left">
+							<li><span class="icon-home-02"></span><a href="javascript:;">加入收藏</a></li>
+							<li><span class="icon-home-05"></span><a href="javascript:;">关注我们</a></li>
+							<li><span class="icon-home-03"></span><a href="javascript:;">在线客服</a></li>
+						</ul>
+						<ul class="top_right">
+							<li>你好，欢迎来到煎饼金融！</li>
+							<li>
+								<a href="#"><span class="btn_geren"><i class="ico-home-16"></i>嘻嘻哈哈</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="btn_tuichu">退出</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav">
+					<div class="nav_con">
+						<ul class="nav_logo">
+							<li></li>
+							<li class="jianbing">煎饼金融</li>
+							<li></li>
+						</ul>
+						<ul class="nav_indro">
+							<!-- <li class="l_one">安全网贷系统</li> -->
+							<li class="l_two">SHOVEBANK.COM</li>
+							<li class="l_three">中国最大的P2P系统服务商</li>
+						</ul>
+						<ul class="nav_list">
+							<li><a href="index.html">首页</a></li>
+							<li><a href="11.html">我要投资</a></li>
+							<li><a href="debt1.html">债权转让</a></li>
+							<li><a href="myAccount.html">我的账户</a></li>
+							<li><a href="javascript:;">财富资讯</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--内容区-->
+			<div class="p_bg_f6 pt30">
+				<div class="p_main">
+					<div class="clr mt20">
+						<div class="p_left_navbox">
+							<ul class="p_zh_navul">
+								<li>
+									<h4>
+										<a href="myAccount.html"><i class="ico-home-07"></i>账户总览</a>
+									</h4>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-10"></i>资金管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="fund_details.html" class="click">资金明细</a></li>
+										<li><a href="recharge.html">充值</a></li>
+									</ul>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-12"></i>投资管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="msim_my.html">我的投资</a></li>
+										<li><a href="debt.html">债权转让</a></li>
+										<li><a href="invest_plan.html">投资统计</a></li>
+										<li><a href="payment_details.html">回款明细</a></li>
+										<li><a href="auto_bid.html">自动投标</a></li>
+									</ul>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-13"></i>账户管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="#">个人基本资料</a></li>
+										<li><a href="bankmanage.html">银行卡管理</a></li>
+									</ul>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-15"></i>互动管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23"  style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="#">我的消息</a></li>
+									</ul>
+								</li>
+								<!-- <li>
+                                    <h4>
+                                        <a href="#"><i class="p_zh_i08"></i>GPS推广</a>
+                                        <span></span>
+                                    </h4>
+                                    <ul class="none">
+                                        <li><a href="#">我的推广链接</a></li>
+                                        <li><a href="#">我成功推广的会员</a></li>
+                                        <li><a href="#">我的推广收入</a></li>
+                                    </ul>
+                                </li> -->
+							</ul>
+						</div>
+						<div class="p_right_wordbox">
+							<!--内容-->
+							<div class="p_zh_xinxi4 clr" style="height: 800px;">
+								<div class="safe_select">
+									<ul>
+										<li><a href="payment_details.html"><input type="button" value="&lt&lt返回" class="return_btn" /></a></li>
+										<li>项目详情</li>
+									</ul>
+								</div>
+								<div class="new_dynamic" style="margin-top: 20px;">
+									<ul class="biao_dy">
+										<li style="height: 30px;">项目基本信息</li>
+										<li class="det_input"><a href="debt.html"><input type="button" value="立即转让" /></a></li>
+									</ul>
+									<ul class="dynamic_mx">
+										<table class="details_table" style="border-collapse: collapse;">
+											<tr>
+												<td class="table_bj">标的编号</td>
+												<td>2016379524</td>
+												<td class="table_bj">标的名称</td>
+												<td style="color: #4aaff7;">董先生北京现代名图汽车抵押贷款5万元</td>
+											</tr>
+											<tr>
+												<td class="table_bj">出借/代理人</td>
+												<td>dl0fanxianjun</td>
+												<td class="table_bj">类型</td>
+												<td>车易贷</td>
+											</tr>
+											<tr>
+												<td class="table_bj">发标日期</td>
+												<td>2016.03.09</td>
+												<td class="table_bj">出借日期</td>
+												<td>2016.03.09</td>
+											</tr>
+											<tr>
+												<td class="table_bj">年利率</td>
+												<td style="color: #F25D5C;">11.10%</td>
+												<td class="table_bj">期限</td>
+												<td style="color: #F25D5C;">2个月</td>
+											</tr>
+											<tr>
+												<td class="table_bj">出借金额</td>
+												<td>￥100.00</td>
+												<td class="table_bj">状态</td>
+												<td>还款中</td>
+											</tr>
+											<tr>
+												<td class="table_bj">还款方式</td>
+												<td>按月付息,到期还本</td>
+												<td class="table_bj">合同</td>
+												<td style="color: #4aaff7;">借款协议书</td>
+											</tr>
+
+										</table>
+									</ul>
+								</div>
+								<div class="transfer_info">
+									<ul class="biao_dy">
+										<li>收款情况</li>
+										<span class="jindu_r">收款进度：2/2</span>
+									</ul>
+									<table class="details_table2" style="border-collapse: collapse;">
+										<tr class="bj">
+											<td colspan="3">已收总额：￥0.92</td>
+
+										</tr>
+										<tr>
+											<td>已收本金:￥0.00</td>
+											<td>已收利息:￥0.92 </td>
+											<td>已收奖励金额:￥0.00 </td>
+										</tr>
+										<tr>
+											<td>已收逾期违约金:￥0.00 </td>
+											<td>已收提前还款违约金:￥0.92 </td>
+											<td>管理费: ￥0.09（<span style="color: #4aaff7;">如何降低管理费？</span>）</td>
+										</tr>
+										<tr class="bj">
+											<td colspan="3">待收总额：￥100.92</td>
+										</tr>
+										<tr>
+											<td>待收本金: ￥100.00</td>
+											<td colspan="2">待收利息: ￥0.92</td>
+										</tr>
+									</table>
+									<table class="details_table3">
+										<tr class="bj">
+											<td>期数</td>
+											<td>应收日期</td>
+											<td>实收日期</td>
+											<td>应收本息(￥)</td>
+											<td>实收本息(￥)</td>
+											<td>逾期（提前还款）违约金(￥)</td>
+											<td>逾期（提前）天数</td>
+											<td>收款状态</td>
+										</tr>
+										<tr>
+											<td>第1期</td>
+											<td>2016.04.09</td>
+											<td>2016.04.09</td>
+											<td >￥0.92
+												<div class="bottomdirection" onmouseover="mOver2(this)" onmouseout="mOut2(this)"></div>
+											</td>
+											<td>￥0.92
+												<div class="bottomdirection"></div>
+											</td>
+											<td>￥0.00</td>
+											<td></td>
+											<td>正常还款</td>
+										</tr>
+										<tr class="bj_tr">
+											<td>第2期</td>
+											<td>2016.04.09</td>
+											<td>2016.04.09</td>
+											<td>￥0.92
+												<div class="bottomdirection" "></div>
+											</td>
+											<td>￥0.92
+												<div class="bottomdirection"></div>
+											</td>
+											<td>￥0.00</td>
+											<td></td>
+											<td>未还</td>
+										</tr>
+									</table>
+									<div id="sh_table_i" class="sh_table_i">
+										<div class="topdirection"></div>
+										<table class="sh_table" style="border-collapse: collapse;">
+											<tr class="bj">
+												<td>类型</td>
+												<td>说明</td>
+											</tr>
+											<tr>
+												<td>本金</td>
+												<td>应收本金：0.00</td>
+											</tr>
+											<tr>
+												<td>利息</td>
+												<td>应收利息：0.92</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--底部-->
+				<div class="footer">
+					<div class="footer_con">
+						<div class="footer_nav">
+							<ul class="footer_list">
+								<li><a href="javascript:;">关于我们</a></li>
+								<li><a href="javascript:;">新手入门</a></li>
+								<li><a href="javascript:;">我要借款</a></li>
+								<li><a href="javascript:;">我要理财</a></li>
+								<li><a href="javascript:;">帮助中心</a></li>
+								<li><a href="javascript:;">利息计算器</a></li>
+							</ul>
+							<ul class="footer_we">
+								<li>关注我们：</li>
+								<li class="f_yuan"><span class="icon-home-05"></span></li>
+								<li>关注微博</li>
+								<li class="f_yuan"><span class="icon-home-04"></span></li>
+								<li>关注微信</li>
+							</ul>
+							<ul class="footer_link">
+								<li>友情链接：网贷平台 保险机构 财富动力 网证券之星 今日汇率网 中金外汇网 络投资 股权众筹 保信贵金属 互联网金融 大连金融网 银行贷款利率 信托产品房产 贷款保险网 沈阳p2p 理财博凯</li>
+							</ul>
+						</div>
+						<div class="footer_right">
+							<ul class="footer_call">
+								<li> <span class="icon-home-09 foot_icon"></span> <span class="foot_call">4009-150-151</span> <span class="foot_time">客服工作时间：9:00-21:00</span> </li>
+							</ul>
+							<ul class="foot_link_pic">
+								<li><img src="img/abcd_08_06.png" /></li>
+								<li><img src="img/abcd_08_08.png" /></li>
+								<li><img src="img/abcd_08_10.png" /></li>
+								<li><img src="img/abcd_08_03.png" /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
+			</div>
+		</div>
+	</body>
+
+</html>

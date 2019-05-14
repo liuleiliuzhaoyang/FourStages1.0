@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.dao.IdentifyMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.pojo.Identify" >
+    <id column="identifyid" property="identifyid" jdbcType="INTEGER" />
+    <result column="identifyname" property="identifyname" jdbcType="VARCHAR" />
+    <result column="identifycode" property="identifycode" jdbcType="VARCHAR" />
+    <result column="identifytel" property="identifytel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    identifyid, identifyname, identifycode, identifytel
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.pojo.IdentifyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from identify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from identify
+    where identifyid = #{identifyid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from identify
+    where identifyid = #{identifyid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.pojo.IdentifyExample" >
+    delete from identify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.pojo.Identify" >
+    insert into identify (identifyid, identifyname, identifycode, 
+      identifytel)
+    values (#{identifyid,jdbcType=INTEGER}, #{identifyname,jdbcType=VARCHAR}, #{identifycode,jdbcType=VARCHAR}, 
+      #{identifytel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.pojo.Identify" >
+    insert into identify
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="identifyid != null" >
+        identifyid,
+      </if>
+      <if test="identifyname != null" >
+        identifyname,
+      </if>
+      <if test="identifycode != null" >
+        identifycode,
+      </if>
+      <if test="identifytel != null" >
+        identifytel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="identifyid != null" >
+        #{identifyid,jdbcType=INTEGER},
+      </if>
+      <if test="identifyname != null" >
+        #{identifyname,jdbcType=VARCHAR},
+      </if>
+      <if test="identifycode != null" >
+        #{identifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="identifytel != null" >
+        #{identifytel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.pojo.IdentifyExample" resultType="java.lang.Integer" >
+    select count(*) from identify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update identify
+    <set >
+      <if test="record.identifyid != null" >
+        identifyid = #{record.identifyid,jdbcType=INTEGER},
+      </if>
+      <if test="record.identifyname != null" >
+        identifyname = #{record.identifyname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identifycode != null" >
+        identifycode = #{record.identifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identifytel != null" >
+        identifytel = #{record.identifytel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update identify
+    set identifyid = #{record.identifyid,jdbcType=INTEGER},
+      identifyname = #{record.identifyname,jdbcType=VARCHAR},
+      identifycode = #{record.identifycode,jdbcType=VARCHAR},
+      identifytel = #{record.identifytel,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.pojo.Identify" >
+    update identify
+    <set >
+      <if test="identifyname != null" >
+        identifyname = #{identifyname,jdbcType=VARCHAR},
+      </if>
+      <if test="identifycode != null" >
+        identifycode = #{identifycode,jdbcType=VARCHAR},
+      </if>
+      <if test="identifytel != null" >
+        identifytel = #{identifytel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where identifyid = #{identifyid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.pojo.Identify" >
+    update identify
+    set identifyname = #{identifyname,jdbcType=VARCHAR},
+      identifycode = #{identifycode,jdbcType=VARCHAR},
+      identifytel = #{identifytel,jdbcType=VARCHAR}
+    where identifyid = #{identifyid,jdbcType=INTEGER}
+  </update>
+</mapper>

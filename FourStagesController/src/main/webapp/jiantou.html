@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="阿星蜀黍 微博：http://weibo.com/577449530/" />
+<title>画箭头</title>
+</head>
+<body>
+<canvas id="mc" width="900px" height="100px" style="background:orange;">您的浏览器不支持canvas元素</canvas>
+<script type="text/javascript">
+window.onload = function(){
+var canvas=document.getElementById("mc");
+var ctx=canvas.getContext('2d');
+//画圆1
+ctx.arc(50,50,25,0,Math.PI*2,true);
+ctx.fillStyle="#CCCCCC";
+ctx.fill();
+//箭头1
+ctx.beginPath();
+ctx.fillStyle="#CCCCCC";
+ctx.moveTo(290,42);
+ctx.lineTo(290,58);
+ctx.lineTo(310,51);
+ctx.fill();
+ctx.fillRect( 90, 50 ,200, 3 );
+ctx.closePath();
+//画圆2
+ctx.arc(340,50,25,0,Math.PI*2,true);
+ctx.fillStyle="#CCCCCC";
+ctx.fill();
+//箭头2
+ctx.beginPath();
+ctx.fillStyle="#CCCCCC";
+ctx.moveTo(580,42);
+ctx.lineTo(580,58);
+ctx.lineTo(600, 51);
+ctx.fill();
+ctx.fillRect( 380, 50 ,200, 3 );
+ctx.closePath();
+//画圆2
+ctx.arc(640,50,25,0,Math.PI*2,true);
+ctx.fillStyle="#CCCCCC";
+ctx.fill();
+}
+</script>
+</body>
+</html>

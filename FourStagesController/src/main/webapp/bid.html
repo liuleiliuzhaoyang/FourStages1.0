@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自动投标</title>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link href="css/home.css" rel="stylesheet" type="text/css" />
+		<!-- <link href="css/narrow.css" rel="stylesheet" type="text/css" /> -->
+		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/site.css" rel="stylesheet" type="text/css" />
+		<link href="css/style2.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/ppcommon.js"></script>
+		<script type="text/javascript" src="js/jquery.date_input.pack.js"></script>
+		<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+	</head>
+	<script type="text/javascript">
+		$(function() {
+			$(".p_tp_del").click(function() {
+				$(".landing").slideDown(200)
+			});
+			$(".login-close").click(function() {
+				$(".landing").slideUp(200)
+			});
+		})
+	</script>
+
+	<body>
+		<div class="page">
+			<!--header-->
+			<div class="header">
+				<div class="top">
+					<div class="top_con">
+						<ul class="top_left">
+							<li><span class="icon-home-02"></span><a href="javascript:;">加入收藏</a></li>
+							<li><span class="icon-home-05"></span><a href="javascript:;">关注我们</a></li>
+							<li><span class="icon-home-03"></span><a href="javascript:;">在线客服</a></li>
+						</ul>
+						<ul class="top_right">
+							<li>你好，欢迎来到煎饼金融！</li>
+							<li>
+								<a href="#"><span class="btn_geren"><i class="ico-home-16"></i>嘻嘻哈哈</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="btn_tuichu">退出</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav">
+					<div class="nav_con">
+						<ul class="nav_logo">
+							<li></li>
+							<li class="jianbing">煎饼金融</li>
+							<li></li>
+						</ul>
+						<ul class="nav_indro">
+							<!-- <li class="l_one">安全网贷系统</li> -->
+							<li class="l_two">SHOVEBANK.COM</li>
+							<li class="l_three">中国最大的P2P系统服务商</li>
+						</ul>
+						<ul class="nav_list">
+							<li><a href="index.html">首页</a></li>
+							<li><a href="11.html">我要投资</a></li>
+							<li><a href="debt1.html">债权转让</a></li>
+							<li><a href="myAccount.html">我的账户</a></li>
+							<li><a href="javascript:;">财富资讯</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--内容区-->
+			<div class="p_bg_f6 pt30">
+				<div class="p_main">
+					<div class="clr mt20">
+						<div class="p_left_navbox">
+							<ul class="p_zh_navul">
+								<li>
+									<h4>
+										<a href="myAccount.html"><i class="ico-home-07"></i>账户总览</a>
+									</h4>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-10"></i>资金管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="fund_details.html" class="click">资金明细</a></li>
+										<li><a href="recharge.html">充值</a></li>
+										<li><a href="#">提现</a></li>
+									</ul>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-12"></i>投资管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="msim_my.html">我的投资</a></li>
+										<li><a href="debt.html">债权转让</a></li>
+										<li><a href="invest_plan.html">投资统计</a></li>
+										<li><a href="payment_details.html">回款明细</a></li>
+										<li><a href="auto_bid.html">自动投标</a></li>
+									</ul>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-13"></i>账户管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="#">个人基本资料</a></li>
+										<li><a href="bankmanage.html">银行卡管理</a></li>
+									</ul>
+								</li>
+								<!-- <li>
+                                    <h4>
+                                        <a href="#"><i class="p_zh_i08"></i>GPS推广</a>
+                                        <span></span>
+                                    </h4>
+                                    <ul class="none">
+                                        <li><a href="#">我的推广链接</a></li>
+                                        <li><a href="#">我成功推广的会员</a></li>
+                                        <li><a href="#">我的推广收入</a></li>
+                                    </ul>
+                                </li> -->
+							</ul>
+						</div>
+						<div class="p_right_wordbox">
+							<!--内容-->
+							<div class="p_zh_xinxi4 clr" style="height: 900px;">
+								<div class="safe_select">
+									<ul>
+										<li><a  href="auto_bid.html"><input value="  &lt&lt 返回" class="return_btn" /></a></li>
+										<li>自动投标工具</li>
+									</ul>
+								</div>
+								<div class="new_dynamic" style="margin-top: 20px;">
+									<ul class="biao_dy">
+										<li style="height: 30px; width: 200px;">出借金额设置：<span style="color: #F25D5C; font-size: 12px;">请输入10的倍数</span></li>				
+									</ul>
+									<ul class="bid_money">
+										<li class="bid_money_txt">单笔出借金额：</li>
+										<li class="bid_money_input">
+											<input type="text" placeholder="不输入则默认为50"/>——
+											<input type="text" placeholder="不输入默认为可用余额"/>
+										</li>
+										<li class="bid_money_txt" style="margin-left: 40px;">账户保留金额：</li>
+										<li class="bid_money_input">
+											<input type="text" placeholder="不输入则默认为0"/>
+										</li>
+									</ul>
+								</div>
+								<div class="transfer_info">
+									<ul class="biao_dy">
+										<li style="height: 30px; width: 230px;">出借项目设置：<span style="color: #F25D5C; font-size: 12px;">请选择自动投标种类</span></li>
+									</ul>
+									<table class="bid_table" style="border-collapse: collapse;">
+										<tr class="bj">
+											<td style="width: 10%;">种类</td>
+											<td style="width: 20%;">还款方式</td>
+											<td style="width: 35%;">期限</td>
+											<td style="width: 35%;">利率</td>
+										</tr>
+										<tr>
+											<td class="bid_table_tit"><input type="checkbox"/>&nbsp;车易贷</td>
+											<td style="text-align: left; padding-left: 10px;color: #bfbfbf;">
+												<input type="checkbox"/>等额本息<br />
+												<input type="checkbox"/>按月付息，到期还本
+											</td>
+											<td class="bid_t_i"><input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>个月</td>
+											<td class="bid_t_i"><input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>%</td>
+										</tr>
+										<tr>
+											<td class="bid_table_tit"><input type="checkbox"/>&nbsp;房易贷</td>
+											<td style="text-align: left; padding-left: 10px; color: #bfbfbf;">
+												<input type="checkbox"/>等额本息<br />
+												<input type="checkbox"/>按月付息，到期还本
+											</td>
+											<td class="bid_t_i"><input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>个月</td>
+											<td class="bid_t_i"><input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>%</td>
+										</tr>
+										<tr>
+											<td class="bid_table_tit"><input type="checkbox"/>&nbsp;赎楼贷</td>
+											<td style="color: #bfbfbf;">
+												<input type="checkbox"/>一次性还清本息
+										
+											</td>
+											<td class="bid_t_i"><input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>个月</td>
+											<td class="bid_t_i"><input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>%</td>
+										</tr>
+										<tr class="bid_zq" style="height: 80px;">
+											<td class="bid_table_tit" style="height: 80px;"><input type="checkbox"/>&nbsp;债权贷</td>
+											<td style="color: #bfbfbf; height: 80px;">
+												<input type="checkbox"/>一次性还清本息
+										
+											</td>
+											<td class="bid_t_i" style="height: 80px;">
+												<input type="checkbox"/>天标
+												<input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>天<br/>
+												<input type="checkbox" style=" margin-left: 14px;"/>月标
+												<input type="text" class="bid_table_input" style=" margin-top: 5px;"/>至 <input type="text" class="bid_table_input"/>个月
+											</td>
+											<td class="bid_t_i" style="height: 80px;">
+												<input type="checkbox"/>天标
+												<input type="text" class="bid_table_input"/>至 <input type="text" class="bid_table_input"/>%<br/>
+												<input type="checkbox"/>月标
+												<input type="text" class="bid_table_input" style=" margin-top: 5px;"/>至 <input type="text" class="bid_table_input"/>%
+											</td>
+										</tr>
+									</table>									
+								</div>
+								<div class="bid_btn">
+									<a href="bid_brief.html"><input type="button" value="立即开启"/></a>
+								</div>
+								<div class="bid_sm">
+									<ul>
+										<li class="bid_l">
+											<div>
+												<ul>
+													<li style="color: #F25D5C;">自动投标工具说明</li>
+													<li>借款进入招标中后，会立即启动自动投标，当自动投标结束后，</li>
+													<li>才会启动手动投标。 投标排序规则如下:</li>
+													<li>1.开启自动投标的用户按照开启自动投标的时间先后进行排序。</li>
+													<li>2.每个用户每个标仅自动投标一次，投标后，排到队尾。</li>
+													<li>3.轮到用户投标时没有符合用户条件的标，不重新排队。</li>
+													<li>4.修改出借金额设置，不重新排队。</li>
+													<li>5.修改投标项目设置，会重新排到队尾。</li>
+													
+												</ul>
+											</div>
+										</li>
+										<li class="bid_r">
+											<table>
+												<tr>
+													<td>产品类型</td>
+													<td>自动投标比例</td>
+													<td>单笔出借限制</td>
+												</tr>
+												<tr>
+													<td>车易贷</td>
+													<td class="bid_c">100.00%</td>
+													<td class="bid_c">20.00%</td>
+												</tr>
+												<tr>
+													<td>房易贷</td>
+													<td class="bid_c">100.00%</td>
+													<td class="bid_c">20.00%</td>
+												</tr>
+												<tr>
+													<td>赎楼贷</td>
+													<td class="bid_c">100.00%</td>
+													<td class="bid_c">20.00%</td>
+												</tr>
+												<tr>
+													<td>债权贷</td>
+													<td>100.00%</td>
+													<td>100.00%</td>
+												</tr>
+												
+											</table>
+											<p class="bid_t_f">以上比例可能会根据运营情况进行调整</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--底部-->
+				<div class="footer ">
+					<div class="footer_con ">
+						<div class="footer_nav ">
+							<ul class="footer_list ">
+								<li><a href="javascript:; ">关于我们</a></li>
+								<li><a href="javascript:; ">新手入门</a></li>
+								<li><a href="javascript:; ">我要借款</a></li>
+								<li><a href="javascript:; ">我要理财</a></li>
+								<li><a href="javascript:; ">帮助中心</a></li>
+								<li><a href="javascript:; ">利息计算器</a></li>
+							</ul>
+							<ul class="footer_we ">
+								<li>关注我们：</li>
+								<li class="f_yuan "><span class="icon-home-05 "></span></li>
+								<li>关注微博</li>
+								<li class="f_yuan "><span class="icon-home-04 "></span></li>
+								<li>关注微信</li>
+							</ul>
+							<ul class="footer_link ">
+								<li>友情链接：网贷平台 保险机构 财富动力 网证券之星 今日汇率网 中金外汇网 络投资 股权众筹 保信贵金属 互联网金融 大连金融网 银行贷款利率 信托产品房产 贷款保险网 沈阳p2p 理财博凯</li>
+							</ul>
+						</div>
+						<div class="footer_right ">
+							<ul class="footer_call ">
+								<li> <span class="icon-home-09 foot_icon "></span> <span class="foot_call ">4009-150-151</span> <span class="foot_time ">客服工作时间：9:00-21:00</span> </li>
+							</ul>
+							<ul class="foot_link_pic ">
+								<li><img src="img/abcd_08_06.png " /></li>
+								<li><img src="img/abcd_08_08.png " /></li>
+								<li><img src="img/abcd_08_10.png " /></li>
+								<li><img src="img/abcd_08_03.png " /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<p class="footer_bottom ">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
+			</div>
+		</div>
+	</body>
+</html>

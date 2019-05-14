@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'home';
+    src: url('../fonts2/home.eot?n0p87d');
+    src: url('../fonts2/home.eot?n0p87d#iefix') format('embedded-opentype'),
+        url('../fonts2/home.ttf?n0p87d') format('truetype'),
+        url('../fonts2/home.woff?n0p87d') format('woff'),
+        url('../fonts2/home.svg?n0p87d#home') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-home"], [class*=" icon-home"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'home' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home-01:before {
+    content: "\e900";
+}
+.icon-home-02:before {
+    content: "\e902";
+}
+.icon-home-03:before {
+    content: "\e903";
+}
+.icon-home-04:before {
+    content: "\e904";
+}
+.icon-home-05:before {
+    content: "\e905";
+}
+.icon-home-06:before {
+    content: "\e907";
+}
+.icon-home-07:before {
+    content: "\e908";
+}
+.icon-home-08:before {
+    content: "\e909";
+}
+.icon-home-09:before {
+    content: "\e901";
+}
+.icon-home-10:before {
+    content: "\e906";
+}
+.icon-home-ico:after{
+    content: "\e901"
+}

@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>投资管理_我的投资</title>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link href="css/home.css" rel="stylesheet" type="text/css" />
+		<!-- <link href="css/narrow.css" rel="stylesheet" type="text/css" /> -->
+		<link href="css/login.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/reset.css" rel="stylesheet" type="text/css" />
+		<link href="css/site.css" rel="stylesheet" type="text/css" />
+		<link href="css/style2.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/ppcommon.js"></script>
+		<script type="text/javascript" src="js/jquery.date_input.pack.js"></script>
+		<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+	</head>
+	<script type="text/javascript">
+		$(function() {
+				$(".p_tp_del").click(function() {
+					$(".landing").slideDown(200)
+				});
+				$(".login-close").click(function() {
+					$(".landing").slideUp(200)
+				});
+			})
+			/*tab*/
+		window.onload = function() {
+			var str = document.getElementById('tab');
+			var str2 = document.getElementById('tab_zi')
+			var oBtn = str2.getElementsByTagName('li')
+			var oDiv = str.getElementsByClassName('tab_con');
+			for (var i = 0; i < oBtn.length; i++) {
+				oBtn[i].index = i;
+				oBtn[i].onclick = function() {
+					for (var i = 0; i < oBtn.length; i++) {
+						oBtn[i].className = '';
+						oDiv[i].style.display = 'none';
+					}
+					this.className = 'active';
+					oDiv[this.index].style.display = 'block';
+				}
+			}
+		}
+	</script>
+
+	<body>
+		<div class="page">
+			<!--header-->
+			<div class="header">
+				<div class="top">
+					<div class="top_con">
+						<ul class="top_left">
+							<li><span class="icon-home-02"></span><a href="javascript:;">加入收藏</a></li>
+							<li><span class="icon-home-05"></span><a href="javascript:;">关注我们</a></li>
+							<li><span class="icon-home-03"></span><a href="javascript:;">在线客服</a></li>
+						</ul>
+						<ul class="top_right">
+							<li>你好，欢迎来到煎饼金融！</li>
+							<li>
+								<a href="#"><span class="btn_geren"><i class="ico-home-16"></i>嘻嘻哈哈</span></a>
+							</li>
+							<li>
+								<a href="#"><span class="btn_tuichu">退出</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav">
+					<div class="nav_con">
+						<ul class="nav_logo">
+							<li></li>
+							<li class="jianbing">煎饼金融</li>
+							<li></li>
+						</ul>
+						<ul class="nav_indro">
+							<!-- <li class="l_one">安全网贷系统</li> -->
+							<li class="l_two">SHOVEBANK.COM</li>
+							<li class="l_three">中国最大的P2P系统服务商</li>
+						</ul>
+						<ul class="nav_list">
+							<li><a href="index.html">首页</a></li>
+							<li><a href="11.html">我要投资</a></li>
+							<li><a href="debt1.html">债权转让</a></li>
+							<li><a href="myAccount.html">我的账户</a></li>
+							<li><a href="javascript:;">财富资讯</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--内容区-->
+			<div class="p_bg_f6 pt30">
+				<div class="p_main">
+					<div class="clr mt20">
+						<div class="p_left_navbox">
+							<ul class="p_zh_navul">
+								<li>
+									<h4>
+										<a href="myAccount.html"><i class="ico-home-07"></i>账户总览</a>
+									</h4>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-10"></i>资金管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="fund_details.html" class="click">资金明细</a></li>
+										<li><a href="recharge.html">充值</a></li>
+									</ul>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-12"></i>投资管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none" style="display:block">
+										<li><a href="msim_my.html">我的投资</a></li>
+										<li><a href="debt.html">债权转让</a></li>
+										<li><a href="invest_plan.html">投资统计</a></li>
+										<li><a href="payment_details.html" class="click">回款明细</a></li>
+										<li><a href="auto_bid.html">自动投标</a></li>
+									</ul>
+								</li>
+								<li>
+									<h4>
+										<a href="#"><i class="ico-home-13"></i>账户管理</a>
+										<span class="ico-home-14"></span>
+										<span class="ico-home-23" style="display:none;"></span>
+									</h4>
+									<ul class="p_zh_li_none">
+										<li><a href="#">个人基本资料</a></li>
+										<li><a href="bankmanage.html">银行卡管理</a></li>
+									</ul>
+								</li>
+								<!-- <li>
+                                    <h4>
+                                        <a href="#"><i class="p_zh_i08"></i>GPS推广</a>
+                                        <span></span>
+                                    </h4>
+                                    <ul class="none">
+                                        <li><a href="#">我的推广链接</a></li>
+                                        <li><a href="#">我成功推广的会员</a></li>
+                                        <li><a href="#">我的推广收入</a></li>
+                                    </ul>
+                                </li> -->
+							</ul>
+						</div>
+						<div class="p_right_wordbox">
+							<!--内容-->
+							<div class="p_zh_xinxi3 clr">
+								<p class="person_title">我的投资</p>
+								<div class="person_list2">
+									<ul class="safe_grade2">
+										<li class="msim_tz">没时间投标？不想刷屏~ 试试易贷网自动投标吧，让理财更轻松！</li>
+										<li class="msim_tz_r"><a href="auto_bid.html"><input type="button" value="自动投标" class="btn_zjtb" /></a></li>
+									</ul>
+								</div>
+								<!--tab-->
+								<div class="safe" id="tab">
+									<div class="safe_title" id="tab_zi">
+										<ul class="msim_bor">
+											<li class="active" style="position: relative;">
+												回收中的项目
+												<p class="msim_ts">1</p>
+											</li>
+											<li>投标中的项目</li>
+											<li>已结清的项目</li>
+										</ul>
+										<a href="#" class="bor_a">查看回顾明细</a>
+									</div>
+									<!--one-->
+									<div class="tab_con" style="display: block;width: 96%; margin-left: 1.8%; border: none;">
+										<div class="msim_type">
+											<ul>
+												<li>项目类型：</li>
+												<li class="msim_all">全部</li>
+												<li class="msim_txt">车易贷</li>
+												<li class="msim_txt">房易贷</li>
+												<li class="msim_txt">赎楼贷</li>
+												<li class="msim_txt">债权贷</li>
+												<li class="msim_txt">债权转让</li>
+											</ul>
+										</div>
+										<div class="msim_select">
+											<ul>
+												<li class="msim_date">查询日期：</li>
+												<li class="msim_select">
+													<select class="select_xia">
+														<option>下期还贷日</option>
+														<option>2</option>
+													</select>
+												</li>
+												<li class="msim_time">
+													<input type="text" class="Wdate m_txt" onFocus="WdatePicker({lang:'zh-cn'})" />至
+													<input type="text" class="Wdate m_txt" onFocus="WdatePicker({lang:'zh-cn'})" />
+												</li>
+												<li class="msim_gjc">关键词：</li>
+												<li class="msim_select">
+													<select class="select_name">
+														<option>标的名称</option>
+														<option>2</option>
+													</select>
+												</li>
+												<li class="msim_input"><input type="text" /></li>
+												<li class="msim_btn"><input type="button" value="搜索" /></li>
+
+											</ul>
+										</div>
+										<div class="msim_id">
+											<table class="msim_table" style="border-collapse: collapse;">
+												<tr class="bj">
+													<td style="width: 14%;">名称|编号</td>
+													<td style="width: 6%;">出借日期</td>
+													<td style="width: 6%;">期限</td>
+													<td style="width: 6%;">年利率</td>
+													<td style="width: 10%;">出借金额(￥)</td>
+													<td style="width: 10%;">应收总额(￥)</td>
+													<td style="width: 10%;">已收总额(￥)</td>
+													<td style="width: 10%;">待收总额(￥)</td>
+													<td style="width: 9%;">下期还款日</td>
+													<td style="width: 6%;">状态</td>
+													<td style="width: 10%;">操作</td>
+												</tr>
+												<tr class="t_txt">
+													<td>
+														<p class="tu_more2" style="background-color: #f25d5c;">车</p>
+														董先生北京现代名图汽 编号 2016379524</td>
+													<td>2016.03.0 </td>
+													<td>2个月</td>
+													<td>11.10%</td>
+													<td>100.00</td>
+													<td>101.84 </td>
+													<td>0.92</td>
+													<td>100.92 </td>
+													<td>2016.05.09</td>
+													<td>还款中</td>
+													<td class="caozuo">
+														<a href="msim_details.html">详情</a>
+														<a href="msim_dynamic.html">动态</a>
+													</td>
+
+												</tr>
+											</table>
+										</div>
+										<div class="tushi" style="width: 59%;">
+											<ul>
+												<li>图释：</li>
+												<li class="tu_more" style="background-color: #5cb4f2;">债</li>
+												<li>债权贷</li>
+												<li class="tu_more" style="background-color: #3527f6;">转</li>
+												<li>债权转让 </li>
+												<li class="tu_more" style="background-color: #fb922c;">转</li>
+												<li>房易贷</li>
+												<li class="tu_more" style="background-color: #05ad70;">赎</li>
+												<li>赎楼贷</li>
+												<li class="tu_more" style="background-color: #f25d5c;">车</li>
+												<li>车易贷</li>
+												<li>资金明细</li>
+											</ul>
+										</div>
+										<!--页码-->
+										<div class="invest_page" style="width: 45%;">
+											<ul class="ip_list">
+												<li><input type="button" value="首页" class="home_btn" /></li>
+												<li><input type="button" value="上一页" class="du_btn" /></li>
+												<li style="width: 20px; color: #F25D5C; text-align: center;">1</li>
+												<li><input type="button" value="下一页" class="du_btn" /></li>
+												<li><input type="button" value="尾页" class="mo_btn" /></li>
+												<li style="color: #343434;">共1页</li>
+												<li><input type="text" class="page_text" /></li>
+												<li style="color: #F25D5C;"><a href="#">GO</a></li>
+											</ul>
+										</div>
+									</div>
+									<!--two-->
+									<div class="tab_con" style="display:none;width: 96%; margin-left: 2%; border: none;">
+										
+										<div class="msim_select" style="margin: 10px;">
+											<ul>
+												<li class="msim_date">投资时间：</li>					
+												<li class="msim_time">
+													<input type="text" class="Wdate m_txt" onFocus="WdatePicker({lang:'zh-cn'})" />至
+													<input type="text" class="Wdate m_txt" onFocus="WdatePicker({lang:'zh-cn'})" />
+												</li>
+												<li class="msim_gjc" style="margin-left: 10%;">关键词：</li>
+												<li class="msim_select">
+													<select class="select_name">
+														<option>标的名称</option>
+														<option>2</option>
+													</select>
+												</li>
+												<li class="msim_input"><input type="text" /></li>
+												<li class="msim_btn"><input type="button" value="搜索" /></li>
+
+											</ul>
+										</div>
+										<div class="msim_id">
+											<table class="msim_table" style="border-collapse: collapse;">
+												<tr class="bj">
+													<td style="width: 14%;">名称|编号</td>
+													<td style="width: 6%;">投资日期</td>
+													<td style="width: 6%;">期限</td>
+													<td style="width: 6%;">年利率</td>
+													<td style="width: 10%;">投资金额(￥)</td>							
+													<td style="width: 9%;">还款方式</td>
+													<td style="width: 10%;">投资进度</td>
+												
+												</tr>
+												<tr class="t_txt">
+													<td>
+														<p class="tu_more2" style="background-color: #f25d5c;">车</p>
+														董先生北京现代名图汽 编号 2016379524
+													</td>
+													<td>2016.03.0 </td>
+													<td>2个月</td>
+													<td>11.10%</td>
+													<td>100.00</td>
+													<td>101.84 </td>
+													<td>
+														<p class="jdt_border"><span class="jdt_fill"></span></p>
+														<span class="jdt_num">98%</span>
+													</td>
+													
+												</tr>
+											</table>
+										</div>
+										<div class="tushi" style="width: 59%;">
+											<ul>
+												<li>图释：</li>
+												<li class="tu_more" style="background-color: #5cb4f2;">债</li>
+												<li>债权贷</li>
+												<li class="tu_more" style="background-color: #3527f6;">转</li>
+												<li>债权转让 </li>
+												<li class="tu_more" style="background-color: #fb922c;">转</li>
+												<li>房易贷</li>
+												<li class="tu_more" style="background-color: #05ad70;">赎</li>
+												<li>赎楼贷</li>
+												<li class="tu_more" style="background-color: #f25d5c;">车</li>
+												<li>车易贷</li>
+												<li>资金明细</li>
+											</ul>
+										</div>
+										<!--页码-->
+										<div class="invest_page" style="width: 45%;">
+											<ul class="ip_list">
+												<li><input type="button" value="首页" class="home_btn" /></li>
+												<li><input type="button" value="上一页" class="du_btn" /></li>
+												<li style="width: 20px; color: #F25D5C; text-align: center;">1</li>
+												<li><input type="button" value="下一页" class="du_btn" /></li>
+												<li><input type="button" value="尾页" class="mo_btn" /></li>
+												<li style="color: #343434;">共1页</li>
+												<li><input type="text" class="page_text" /></li>
+												<li style="color: #F25D5C;"><a href="#">GO</a></li>
+											</ul>
+										</div>
+									</div>
+									<!--three-->
+									<div class="tab_con" style="display:none;width: 96%; margin-left: 2%;border: none;">
+										<div class="msim_type">
+											<ul>
+												<li>项目类型：</li>
+												<li class="msim_all">全部</li>
+												<li class="msim_txt">车易贷</li>
+												<li class="msim_txt">房易贷</li>
+												<li class="msim_txt">赎楼贷</li>
+												<li class="msim_txt">债权贷</li>
+												<li class="msim_txt">债权转让</li>
+											</ul>
+										</div>
+										<div class="msim_select">
+											<ul>
+												<li class="msim_date">查询日期：</li>
+												<li class="msim_select">
+													<select class="select_xia">
+														<option>下期还贷日</option>
+														<option>2</option>
+													</select>
+												</li>
+												<li class="msim_time">
+													<input type="text" class="Wdate m_txt" onFocus="WdatePicker({lang:'zh-cn'})" />至
+													<input type="text" class="Wdate m_txt" onFocus="WdatePicker({lang:'zh-cn'})" />
+												</li>
+												<li class="msim_gjc">关键词：</li>
+												<li class="msim_select">
+													<select class="select_name">
+														<option>标的名称</option>
+														<option>2</option>
+													</select>
+												</li>
+												<li class="msim_input"><input type="text" /></li>
+												<li class="msim_btn"><input type="button" value="搜索" /></li>
+
+											</ul>
+										</div>
+										<div class="msim_id">
+											<table class="msim_table" style="border-collapse: collapse;">
+												<tr class="bj">
+													<td style="width: 15%;">名称|编号</td>
+													<td style="width: 6%;">出借日期</td>
+													<td style="width: 6%;">期限</td>
+													<td style="width: 6%;">年利率</td>
+													<td style="width: 10%;">出借金额(￥)</td>
+													<td style="width: 10%;">结清日期</td>
+													<td style="width: 10%;">实收总额(￥)</td>
+													<td style="width: 10%;">已转金额(￥)</td>						
+													<td style="width: 6%;">状态</td>
+													<td style="width: 10%;">操作</td>
+												</tr>
+												<tr class="t_txt">
+													<td>
+														<p class="tu_more2" style="background-color: #f25d5c;">车</p>
+														董先生北京现代名图汽 编号 2016379524</td>
+													<td>2016.03.0 </td>
+													<td>2个月</td>
+													<td>11.10%</td>
+													<td>100.00</td>
+													<td>101.84 </td>
+													<td>0.92</td>
+													<td>100.92 </td>
+													<td>还款中</td>
+													<td class="caozuo">
+														<a href="#">详情</a>
+														<a href="#">动态</a>
+													</td>
+
+												</tr>
+											</table>
+										</div>
+										<div class="tushi" style="width: 59%;">
+											<ul>
+												<li>图释：</li>
+												<li class="tu_more" style="background-color: #5cb4f2;">债</li>
+												<li>债权贷</li>
+												<li class="tu_more" style="background-color: #3527f6;">转</li>
+												<li>债权转让 </li>
+												<li class="tu_more" style="background-color: #fb922c;">转</li>
+												<li>房易贷</li>
+												<li class="tu_more" style="background-color: #05ad70;">赎</li>
+												<li>赎楼贷</li>
+												<li class="tu_more" style="background-color: #f25d5c;">车</li>
+												<li>车易贷</li>
+												<li>资金明细</li>
+											</ul>
+										</div>
+										<!--页码-->
+										<div class="invest_page" style="width: 45%;">
+											<ul class="ip_list">
+												<li><input type="button" value="首页" class="home_btn" /></li>
+												<li><input type="button" value="上一页" class="du_btn" /></li>
+												<li style="width: 20px; color: #F25D5C; text-align: center;">1</li>
+												<li><input type="button" value="下一页" class="du_btn" /></li>
+												<li><input type="button" value="尾页" class="mo_btn" /></li>
+												<li style="color: #343434;">共1页</li>
+												<li><input type="text" class="page_text" /></li>
+												<li style="color: #F25D5C;"><a href="#">GO</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!--底部-->
+				<div class="footer">
+					<div class="footer_con">
+						<div class="footer_nav">
+							<ul class="footer_list">
+								<li><a href="javascript:;">关于我们</a></li>
+								<li><a href="javascript:;">新手入门</a></li>
+								<li><a href="javascript:;">我要借款</a></li>
+								<li><a href="javascript:;">我要理财</a></li>
+								<li><a href="javascript:;">帮助中心</a></li>
+								<li><a href="javascript:;">利息计算器</a></li>
+							</ul>
+							<ul class="footer_we">
+								<li>关注我们：</li>
+								<li class="f_yuan"><span class="icon-home-05"></span></li>
+								<li>关注微博</li>
+								<li class="f_yuan"><span class="icon-home-04"></span></li>
+								<li>关注微信</li>
+							</ul>
+							<ul class="footer_link">
+								<li>友情链接：网贷平台 保险机构 财富动力 网证券之星 今日汇率网 中金外汇网 络投资 股权众筹 保信贵金属 互联网金融 大连金融网 银行贷款利率 信托产品房产 贷款保险网 沈阳p2p 理财博凯</li>
+							</ul>
+						</div>
+						<div class="footer_right">
+							<ul class="footer_call">
+								<li> <span class="icon-home-09 foot_icon"></span> <span class="foot_call">4009-150-151</span> <span class="foot_time">客服工作时间：9:00-21:00</span> </li>
+							</ul>
+							<ul class="foot_link_pic">
+								<li><img src="img/abcd_08_06.png" /></li>
+								<li><img src="img/abcd_08_08.png" /></li>
+								<li><img src="img/abcd_08_10.png" /></li>
+								<li><img src="img/abcd_08_03.png" /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
+			</div>
+		</div>
+	</body>
+
+</html>

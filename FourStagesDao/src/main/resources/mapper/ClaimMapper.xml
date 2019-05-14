@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.dao.ClaimMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.pojo.Claim" >
+    <id column="claimid" property="claimid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="claimzuidi" property="claimzuidi" jdbcType="VARCHAR" />
+    <result column="claimzuigao" property="claimzuigao" jdbcType="VARCHAR" />
+    <result column="claimzhuanrang" property="claimzhuanrang" jdbcType="VARCHAR" />
+    <result column="claimchengjie" property="claimchengjie" jdbcType="VARCHAR" />
+    <result column="claimzhuangrangdate" property="claimzhuangrangdate" jdbcType="DATE" />
+    <result column="claimzhuangtai" property="claimzhuangtai" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    claimid, userid, claimzuidi, claimzuigao, claimzhuanrang, claimchengjie, claimzhuangrangdate, 
+    claimzhuangtai
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.pojo.ClaimExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from claim
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from claim
+    where claimid = #{claimid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from claim
+    where claimid = #{claimid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.pojo.ClaimExample" >
+    delete from claim
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.pojo.Claim" >
+    insert into claim (claimid, userid, claimzuidi, 
+      claimzuigao, claimzhuanrang, claimchengjie, 
+      claimzhuangrangdate, claimzhuangtai)
+    values (#{claimid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{claimzuidi,jdbcType=VARCHAR}, 
+      #{claimzuigao,jdbcType=VARCHAR}, #{claimzhuanrang,jdbcType=VARCHAR}, #{claimchengjie,jdbcType=VARCHAR}, 
+      #{claimzhuangrangdate,jdbcType=DATE}, #{claimzhuangtai,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.pojo.Claim" >
+    insert into claim
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="claimid != null" >
+        claimid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="claimzuidi != null" >
+        claimzuidi,
+      </if>
+      <if test="claimzuigao != null" >
+        claimzuigao,
+      </if>
+      <if test="claimzhuanrang != null" >
+        claimzhuanrang,
+      </if>
+      <if test="claimchengjie != null" >
+        claimchengjie,
+      </if>
+      <if test="claimzhuangrangdate != null" >
+        claimzhuangrangdate,
+      </if>
+      <if test="claimzhuangtai != null" >
+        claimzhuangtai,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="claimid != null" >
+        #{claimid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="claimzuidi != null" >
+        #{claimzuidi,jdbcType=VARCHAR},
+      </if>
+      <if test="claimzuigao != null" >
+        #{claimzuigao,jdbcType=VARCHAR},
+      </if>
+      <if test="claimzhuanrang != null" >
+        #{claimzhuanrang,jdbcType=VARCHAR},
+      </if>
+      <if test="claimchengjie != null" >
+        #{claimchengjie,jdbcType=VARCHAR},
+      </if>
+      <if test="claimzhuangrangdate != null" >
+        #{claimzhuangrangdate,jdbcType=DATE},
+      </if>
+      <if test="claimzhuangtai != null" >
+        #{claimzhuangtai,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.pojo.ClaimExample" resultType="java.lang.Integer" >
+    select count(*) from claim
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update claim
+    <set >
+      <if test="record.claimid != null" >
+        claimid = #{record.claimid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null" >
+        userid = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.claimzuidi != null" >
+        claimzuidi = #{record.claimzuidi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.claimzuigao != null" >
+        claimzuigao = #{record.claimzuigao,jdbcType=VARCHAR},
+      </if>
+      <if test="record.claimzhuanrang != null" >
+        claimzhuanrang = #{record.claimzhuanrang,jdbcType=VARCHAR},
+      </if>
+      <if test="record.claimchengjie != null" >
+        claimchengjie = #{record.claimchengjie,jdbcType=VARCHAR},
+      </if>
+      <if test="record.claimzhuangrangdate != null" >
+        claimzhuangrangdate = #{record.claimzhuangrangdate,jdbcType=DATE},
+      </if>
+      <if test="record.claimzhuangtai != null" >
+        claimzhuangtai = #{record.claimzhuangtai,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update claim
+    set claimid = #{record.claimid,jdbcType=INTEGER},
+      userid = #{record.userid,jdbcType=INTEGER},
+      claimzuidi = #{record.claimzuidi,jdbcType=VARCHAR},
+      claimzuigao = #{record.claimzuigao,jdbcType=VARCHAR},
+      claimzhuanrang = #{record.claimzhuanrang,jdbcType=VARCHAR},
+      claimchengjie = #{record.claimchengjie,jdbcType=VARCHAR},
+      claimzhuangrangdate = #{record.claimzhuangrangdate,jdbcType=DATE},
+      claimzhuangtai = #{record.claimzhuangtai,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.pojo.Claim" >
+    update claim
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="claimzuidi != null" >
+        claimzuidi = #{claimzuidi,jdbcType=VARCHAR},
+      </if>
+      <if test="claimzuigao != null" >
+        claimzuigao = #{claimzuigao,jdbcType=VARCHAR},
+      </if>
+      <if test="claimzhuanrang != null" >
+        claimzhuanrang = #{claimzhuanrang,jdbcType=VARCHAR},
+      </if>
+      <if test="claimchengjie != null" >
+        claimchengjie = #{claimchengjie,jdbcType=VARCHAR},
+      </if>
+      <if test="claimzhuangrangdate != null" >
+        claimzhuangrangdate = #{claimzhuangrangdate,jdbcType=DATE},
+      </if>
+      <if test="claimzhuangtai != null" >
+        claimzhuangtai = #{claimzhuangtai,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where claimid = #{claimid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.pojo.Claim" >
+    update claim
+    set userid = #{userid,jdbcType=INTEGER},
+      claimzuidi = #{claimzuidi,jdbcType=VARCHAR},
+      claimzuigao = #{claimzuigao,jdbcType=VARCHAR},
+      claimzhuanrang = #{claimzhuanrang,jdbcType=VARCHAR},
+      claimchengjie = #{claimchengjie,jdbcType=VARCHAR},
+      claimzhuangrangdate = #{claimzhuangrangdate,jdbcType=DATE},
+      claimzhuangtai = #{claimzhuangtai,jdbcType=VARCHAR}
+    where claimid = #{claimid,jdbcType=INTEGER}
+  </update>
+</mapper>

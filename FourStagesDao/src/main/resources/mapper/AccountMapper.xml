@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.dao.AccountMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.pojo.Account" >
+    <id column="accountid" property="accountid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="accounttotalmoney" property="accounttotalmoney" jdbcType="DOUBLE" />
+    <result column="accountusermoney" property="accountusermoney" jdbcType="DOUBLE" />
+    <result column="accountfrostmoney" property="accountfrostmoney" jdbcType="DOUBLE" />
+    <result column="accountyishoulixi" property="accountyishoulixi" jdbcType="DOUBLE" />
+    <result column="accountdaishouzonge" property="accountdaishouzonge" jdbcType="DOUBLE" />
+    <result column="accountdaihuanjine" property="accountdaihuanjine" jdbcType="DOUBLE" />
+    <result column="accountflag" property="accountflag" jdbcType="DOUBLE" />
+    <result column="accountflag2" property="accountflag2" jdbcType="DOUBLE" />
+    <result column="accountflag3" property="accountflag3" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    accountid, userid, accounttotalmoney, accountusermoney, accountfrostmoney, accountyishoulixi, 
+    accountdaishouzonge, accountdaihuanjine, accountflag, accountflag2, accountflag3
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.pojo.AccountExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from account
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from account
+    where accountid = #{accountid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from account
+    where accountid = #{accountid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.pojo.AccountExample" >
+    delete from account
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.pojo.Account" >
+    insert into account (accountid, userid, accounttotalmoney, 
+      accountusermoney, accountfrostmoney, accountyishoulixi, 
+      accountdaishouzonge, accountdaihuanjine, 
+      accountflag, accountflag2, accountflag3
+      )
+    values (#{accountid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{accounttotalmoney,jdbcType=DOUBLE}, 
+      #{accountusermoney,jdbcType=DOUBLE}, #{accountfrostmoney,jdbcType=DOUBLE}, #{accountyishoulixi,jdbcType=DOUBLE}, 
+      #{accountdaishouzonge,jdbcType=DOUBLE}, #{accountdaihuanjine,jdbcType=DOUBLE}, 
+      #{accountflag,jdbcType=DOUBLE}, #{accountflag2,jdbcType=DOUBLE}, #{accountflag3,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.pojo.Account" >
+    insert into account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="accountid != null" >
+        accountid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="accounttotalmoney != null" >
+        accounttotalmoney,
+      </if>
+      <if test="accountusermoney != null" >
+        accountusermoney,
+      </if>
+      <if test="accountfrostmoney != null" >
+        accountfrostmoney,
+      </if>
+      <if test="accountyishoulixi != null" >
+        accountyishoulixi,
+      </if>
+      <if test="accountdaishouzonge != null" >
+        accountdaishouzonge,
+      </if>
+      <if test="accountdaihuanjine != null" >
+        accountdaihuanjine,
+      </if>
+      <if test="accountflag != null" >
+        accountflag,
+      </if>
+      <if test="accountflag2 != null" >
+        accountflag2,
+      </if>
+      <if test="accountflag3 != null" >
+        accountflag3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="accountid != null" >
+        #{accountid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="accounttotalmoney != null" >
+        #{accounttotalmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountusermoney != null" >
+        #{accountusermoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountfrostmoney != null" >
+        #{accountfrostmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountyishoulixi != null" >
+        #{accountyishoulixi,jdbcType=DOUBLE},
+      </if>
+      <if test="accountdaishouzonge != null" >
+        #{accountdaishouzonge,jdbcType=DOUBLE},
+      </if>
+      <if test="accountdaihuanjine != null" >
+        #{accountdaihuanjine,jdbcType=DOUBLE},
+      </if>
+      <if test="accountflag != null" >
+        #{accountflag,jdbcType=DOUBLE},
+      </if>
+      <if test="accountflag2 != null" >
+        #{accountflag2,jdbcType=DOUBLE},
+      </if>
+      <if test="accountflag3 != null" >
+        #{accountflag3,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.pojo.AccountExample" resultType="java.lang.Integer" >
+    select count(*) from account
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update account
+    <set >
+      <if test="record.accountid != null" >
+        accountid = #{record.accountid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null" >
+        userid = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.accounttotalmoney != null" >
+        accounttotalmoney = #{record.accounttotalmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountusermoney != null" >
+        accountusermoney = #{record.accountusermoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountfrostmoney != null" >
+        accountfrostmoney = #{record.accountfrostmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountyishoulixi != null" >
+        accountyishoulixi = #{record.accountyishoulixi,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountdaishouzonge != null" >
+        accountdaishouzonge = #{record.accountdaishouzonge,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountdaihuanjine != null" >
+        accountdaihuanjine = #{record.accountdaihuanjine,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountflag != null" >
+        accountflag = #{record.accountflag,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountflag2 != null" >
+        accountflag2 = #{record.accountflag2,jdbcType=DOUBLE},
+      </if>
+      <if test="record.accountflag3 != null" >
+        accountflag3 = #{record.accountflag3,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update account
+    set accountid = #{record.accountid,jdbcType=INTEGER},
+      userid = #{record.userid,jdbcType=INTEGER},
+      accounttotalmoney = #{record.accounttotalmoney,jdbcType=DOUBLE},
+      accountusermoney = #{record.accountusermoney,jdbcType=DOUBLE},
+      accountfrostmoney = #{record.accountfrostmoney,jdbcType=DOUBLE},
+      accountyishoulixi = #{record.accountyishoulixi,jdbcType=DOUBLE},
+      accountdaishouzonge = #{record.accountdaishouzonge,jdbcType=DOUBLE},
+      accountdaihuanjine = #{record.accountdaihuanjine,jdbcType=DOUBLE},
+      accountflag = #{record.accountflag,jdbcType=DOUBLE},
+      accountflag2 = #{record.accountflag2,jdbcType=DOUBLE},
+      accountflag3 = #{record.accountflag3,jdbcType=DOUBLE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.pojo.Account" >
+    update account
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="accounttotalmoney != null" >
+        accounttotalmoney = #{accounttotalmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountusermoney != null" >
+        accountusermoney = #{accountusermoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountfrostmoney != null" >
+        accountfrostmoney = #{accountfrostmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="accountyishoulixi != null" >
+        accountyishoulixi = #{accountyishoulixi,jdbcType=DOUBLE},
+      </if>
+      <if test="accountdaishouzonge != null" >
+        accountdaishouzonge = #{accountdaishouzonge,jdbcType=DOUBLE},
+      </if>
+      <if test="accountdaihuanjine != null" >
+        accountdaihuanjine = #{accountdaihuanjine,jdbcType=DOUBLE},
+      </if>
+      <if test="accountflag != null" >
+        accountflag = #{accountflag,jdbcType=DOUBLE},
+      </if>
+      <if test="accountflag2 != null" >
+        accountflag2 = #{accountflag2,jdbcType=DOUBLE},
+      </if>
+      <if test="accountflag3 != null" >
+        accountflag3 = #{accountflag3,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where accountid = #{accountid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.pojo.Account" >
+    update account
+    set userid = #{userid,jdbcType=INTEGER},
+      accounttotalmoney = #{accounttotalmoney,jdbcType=DOUBLE},
+      accountusermoney = #{accountusermoney,jdbcType=DOUBLE},
+      accountfrostmoney = #{accountfrostmoney,jdbcType=DOUBLE},
+      accountyishoulixi = #{accountyishoulixi,jdbcType=DOUBLE},
+      accountdaishouzonge = #{accountdaishouzonge,jdbcType=DOUBLE},
+      accountdaihuanjine = #{accountdaihuanjine,jdbcType=DOUBLE},
+      accountflag = #{accountflag,jdbcType=DOUBLE},
+      accountflag2 = #{accountflag2,jdbcType=DOUBLE},
+      accountflag3 = #{accountflag3,jdbcType=DOUBLE}
+    where accountid = #{accountid,jdbcType=INTEGER}
+  </update>
+</mapper>

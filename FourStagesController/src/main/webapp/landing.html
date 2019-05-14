@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>landing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="阿星蜀黍 微博：http://weibo.com/577449530/" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/jquery.js"></script>
+<style type="text/css">
+*{
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	color: #666;
+	text-decoration: none;
+}
+.landing{
+	color: #666;
+	font-family: "微软雅黑";
+	z-index:9999;
+	position:fixed;
+	top:45%;
+	left:50%;
+	width:36%;
+	height:460px;
+	margin:-180px 0 0 -250px;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-ms-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border:solid 2px #666;
+	background-color:#fff;
+	
+}
+.login-poptit {
+	border-bottom:1px solid #ddd;
+	padding:12px;
+	position: relative;
+}
+.login-poptit .close {
+	float:right;
+	color:#999;
+	padding:5px;
+	margin:-2px -5px -5px;
+	font:bold 14px/14px "宋体";
+	text-shadow:0 1px 0 #ddd;
+}
+.login-poptit .close:hover {
+	color:#444;
+}
+.login-popbody{
+	height: auto;
+	width: 75%;
+	margin: 0 auto;
+}
+h4{
+	padding: 20px 0px;
+}
+.loginform{
+	width: 100%;
+	height: auto;
+}
+.login-icon{
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	padding: 10px 0;
+}
+.login-icon-pic{
+	width: 8%;
+	padding: 8px;
+	background: #f25d5c;
+	float: left;
+}
+.login-icon img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.ipt {
+	font-family: "微软雅黑";
+	font-size: 15px;
+	float: left;
+	display: inline-block;
+	border: solid 1px #d2d2d2;
+	border-left-color: none;
+	background-color: #fff;
+	padding: 5px 8px;
+	height: 35px;
+	line-height: 35px;
+	color: #666;
+	width: 82%;
+}
+.login-forget{
+	width: 100%;
+	height: auto;
+}
+.login-forget a{
+	color: #666;
+	float: right;
+}
+.login-botton{
+	margin-top: 70px;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background: #f25d5c;
+}
+.login-botton .btn{
+	padding: 5px 0;
+	display: block;
+	width: 100%;
+	height: auto;
+	line-height: 40px;
+	overflow: hidden;
+	color: #fff;
+	background: #f25d5c;	
+	text-align: center;
+	font-size: 20px;
+	border: none;
+	font-family: '微软雅黑';
+	cursor: pointer;
+}
+p.login-footer{	
+	margin-top: 20px;
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+</style>
+</head>
+<script type="text/javascript">
+	$(document).ready(function($) {
+		$('.btn_login,.btn_regist').click(function(){
+			$('.landing').slideDown(200);
+		})
+		$('.login-poptit .close').click(function(){
+			$('.landing').slideUp(200);
+		})
+	})
+</script>
+    <body>
+    	<div class="landing">
+	    	<div class="login-poptit">
+	            <a href="javascript:;" title="关闭" class="close">×</a>
+	            <h3>登录</h3>
+	     	</div>
+	     	<div class="login-popbody">
+	     		<h4>为提升账户安全性，已取消昵称登陆</h4>
+	            <form class="loginform" name="loginform" action="" method="post">
+                     <div class="login-icon">
+	                     <div class="login-icon-pic">
+	                     	<img src="img/ymh.png"/>
+	                     </div>
+						 <input class="ipt" type="text" name="yh" placeholder="输入手机号或邮箱" />
+					 </div>
+                     <div class="login-icon">
+	                     <div class="login-icon-pic">
+	                     	<img src="img/mm.png"/>
+	                     </div>
+						 <input class="ipt" type="password" name="pwd" placeholder="输入登陆密码" />
+					 </div>
+                	 <div class="login-forget">
+                	 	<a href="">忘记密码？</a>
+                	 </div>
+                	 <div class="login-botton">
+                	 	<input type="submit" value="立即登录" class="btn">
+                	 </div>
+                	 <p class="login-footer">
+                	 	<a href="">没有账号去注册&gt&gt</a>
+                	 <p>
+	            </form>
+            </div>
+  		</div>
+    </body>
+</html>

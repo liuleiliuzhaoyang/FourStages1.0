@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+<!-- <link rel="stylesheet" href="css/narrow.css" type="text/css" /> -->
+<link rel="stylesheet" href="css/home.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/style2.css" type="text/css" />
+<link rel="stylesheet" href="css/style4.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
+<script type="text/javascript" src="js/ppcommon.js"></script>
+</head>
+<script type="text/javascript">
+// $(function() {
+// 	var bannerSlider = new Slider($('#banner_tabs'), {
+// 				time: 2000,
+// 				delay: 400,
+// 				event: 'hover',
+// 				auto: true,
+// 				mode: 'fade',
+// 				controller: $('#bannerCtrl'),
+// 				activeControllerCls: 'active'
+// 	});
+//   	$('#banner_tabs .flex-prev').click(function() {
+//   		bannerSlider.prev()
+//   	});
+//   	$('#banner_tabs .flex-next').click(function() {
+//   		bannerSlider.next()
+//   	})
+// });
+</script>
+<body>
+<div class="page"> 
+  <!--header-->
+  <div class="header" >
+    <div class="top">
+      <div class="top_con">
+        <ul class="top_left">
+          <li><span class="icon-home-02"></span><a href="javascript:;">加入收藏</a></li>
+          <li><span class="icon-home-05"></span><a href="javascript:;">关注我们</a></li>
+          <li><span class="icon-home-03"></span><a href="javascript:;">在线客服</a></li>
+        </ul>
+        <ul class="top_right">
+          <li>你好，欢迎来到煎饼金融！</li>
+          <li>
+            <input type="button" value="登录" class="btn_login" />
+          </li>
+          <li>
+            <a href="regist.html"><input type="button" value="注册" class="btn_regist" /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="nav_con">
+        <ul class="nav_logo">
+          <li></li>
+          <li class="jianbing">煎饼金融</li>
+          <li></li>
+        </ul>
+        <ul class="nav_indro">
+          <!-- <li class="l_one">安全网贷系统</li> -->
+          <li class="l_two">SHOVEBANK.COM</li>
+          <li class="l_three">中国最大的P2P系统服务商</li>
+        </ul>
+        <ul class="nav_list">
+          <li><a href="javascript:;">首页</a></li>
+          <li><a href="11.html">我要投资</a></li>
+          <li><a href="debt1.html">债权转让</a></li>
+          <li><a href="myAccount.html">我的账户</a></li>
+          <li><a href="javascript:;">财富资讯</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 登陆 -->
+      <div class="landing">
+        <div class="login-poptit">
+              <a href="javascript:;" title="关闭" class="login-close"></a>
+              <span class="landing-txt">登录</span>
+        </div>
+        <div class="login-popbody">
+          <p class="p_con">为提升账户安全性，已取消昵称登陆</p>
+              <form class="loginform" name="loginform" action="" method="post">
+                  <div class="login-icon">
+                     <div class="login-icon-pic">
+                        <!-- <img src="img/ymh.png"/> -->
+                     </div>
+                    <input class="ipt" type="text" name="yh" placeholder="输入手机号或邮箱" />
+                  </div>
+                  <div class="login-icon">
+                     <div class="login-icon-pic login-icon-pic1">
+                        <!-- <img src="img/mm.png"/> -->
+                     </div>
+                    <input class="ipt" type="password" name="pwd" placeholder="输入登陆密码" />
+                  </div>
+                   <div class="login-forget">
+                    <a href="">忘记密码？</a>
+                   </div>
+                   <div class="login-botton">
+                    <input type="submit" value="立即登录" class="btn">
+                   </div>
+                   <p class="login-footer">
+                    <a href="regist.html">没有账号去注册</a>
+                   <p>
+              </form>
+          </div>
+      </div>
+  <!--banner-->
+  <div class="banner">
+    <div id="banner_tabs" class="flexslider"> 
+      <!--图片-->
+      <ul class="slides">
+        <li> <a title="" target="_blank" href="#"> <img width="1920px" height="385px" alt="" style="background:url(img/ghjk.png) no-repeat center;"> </a> </li>
+        <li> <a title="" href="#"> <img width="1920px" height="385px" alt="" style="background: url(img/ghjk.png) no-repeat center;"> </a> </li>
+        <li> <a title="" href="#"> <img width="1920px" height="385px" alt="" style="background: url(img/ghjk.png) no-repeat center;"> </a> </li>
+      </ul>
+      <!--原点-->
+      <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+        <li class="active"><a>1</a></li>
+        <li><a>2</a></li>
+        <li><a>3</a></li>
+      </ol>
+    </div>
+    <div class="banner_regist">
+      <ul>
+        <li class="banner_I">I车保网贷年化收益<span>15.0%</span></li>
+        <li class="banner_cunkuan" style="text-align: left;">35倍银行活期存款收益4.15倍银行定期存款收益</li>
+        <li class="banner_btn">
+          <a href="regist.html"><input type="button" value="免费注册" /></a>
+        </li>
+        <li class="banner_zhanghao"><a href="#" class="yiyou">已有账号?</a><a href="#" class="denglu">立即登录</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--notice-->
+  <div class="notice">
+    <div class="notice_con">
+      <div class="notice_title">
+        <ul>
+          <li class="icon-home-01 tongzhi"></li>
+          <li class="n_zhongjiang">公告：[中奖公告]"I车宝网贷财富中心揭牌50元债券大放送"5月15日中奖名单</li>
+          <li class="n_more"><a href="javarscript:;">+更多</a></li>
+        </ul>
+      </div>
+      <div class="notice_content">
+        <ul class="nc_icon">
+          <li><span class="icon-home-07 nc_btn"></span></li>
+          <li><span class="icon-home-08 nc_btn"></span></li>
+          <li><span class="icon-home-06 nc_btn"></span></li>
+          <li><span class="icon-jianbing-10 nc_btn"></span></li>
+        </ul>
+        <ul class="nc_text">
+          <li><span class="text_bt">我要投资</span><span class="text_bt2">完美的投资</span><span class="text_bt2">保障资质稳健性好</span></li>
+          <li><span class="text_bt">资金托管</span><span class="text_bt2">独立的第三方</span><span class="text_bt2">资金托管可靠性强</span></li>
+          <li><span class="text_bt">低门槛</span><span class="text_bt2">50元就可理财</span><span class="text_bt2">最高年化收益50%</span></li>
+          <li><span class="text_bt">安全保障</span><span class="text_bt2">100%本息保障</span><span class="text_bt2">合作机构全额保障</span></li>
+        </ul>
+      </div>
+      <div class="notice_finance">
+        <div class="notice_img"> <img src="img/po-2-01.png" width="290px" height="338px" /> </div>
+        <div class="nf_text">
+          <p class="nf_finance">理财风云榜</p>
+          <table class="nf_table">
+            <tr>
+              <td>排名</td>
+              <td>用户名</td>
+              <td>投资金额</td>
+            </tr>
+            <tr>
+              <td class="nf_id"><img src="img/wq1-01.png" width="30px" height="30px" /> <span>1</span></td>
+              <td>zhou</td>
+              <td>5,682.00</td>
+            </tr>
+            <tr>
+              <td class="nf_id"><img src="img/wq1-02.png" width="30px" height="30px" /> <span>2</span></td>
+              <td>jim</td>
+              <td>3,685.00</td>
+            </tr>
+            <tr>
+              <td class="nf_id"><img src="img/wq1-03.png" width="30px" height="30px" /> <span>3</span></td>
+              <td>zhou</td>
+              <td>5,682.00</td>
+            </tr>
+            <tr>
+              <td class="nf_id"><p class="yuan"></p>
+                <span style="left: -20px; top:-2px">4</span></td>
+              <td>jim</td>
+              <td>3,685.00</td>
+            </tr>
+            <tr>
+              <td colspan="3" class="nf_select"><a href="javascript:;">查看更多公告&gt;&gt;</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--project-->
+  <div class="project">
+    <div class="project_con">
+      <div class="project_title">
+        <ul>
+          <li class="project_tuijian">推荐项目</li>
+          <li class="project_line"></li>
+          <li class="project_tit">利润高，起点低，期限短</li>
+          <li class="project_more"><a href="javascript:;">+更多</a></li>
+        </ul>
+      </div>
+      <div class="project_content">
+        <ul class="p_title">
+          <li class="p_jian"><span>荐</span></li>
+          <li class="p_text">I车保网贷项目资金周转</li>
+        </ul>
+        <ul>
+          <table class="project_table">
+            <tr>
+              <td style="text-align: left; width: 25%;"><span class="pt_shiwu">15.00%</span> <span class="pt_yuqi">预期年华收益率</span> <span class="pt_pay">还款方式：<i>按月付息，到期还款</i></span></td>
+              <td style="width: 10%;"><span class="pt_date">6个月</span> <span class="pt_qixian">还款期限</span></td>
+              <td class="pr_line"></td>
+              <td><span class="pt_date">1000元</span> <span class="pt_qixian">还需还款</span></td>
+              <td class="pr_line"></td>
+              <td><span class="pt_date">150.00万元</span> <span class="pt_qixian">借款金额</span></td>
+              <td><input type="button" value="立即投标" class="pr_btn_liji" /></td>
+            </tr>
+            <tr>
+              <td colspan="7"><span id="total"></span>
+                <div class="bottomdirection"></div>
+                <div class="container">
+                  <div id="bar" style="width:0%;"></div>
+                </div></td>
+            </tr>
+          </table>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--project_list-->
+  <div class="project_list">
+    <div class="project_list_con">
+      <div class="pl_img"> <img src="img/ghj_03.png" /> </div>
+      <div class="pl_list">
+        <div class="pl_title">
+          <ul class="pl_line">
+            <li class="pl_prolist">项目列表</li>
+            <li class="pl_more"><a href="javascript:;">更多&gt;</a></li>
+            <div class="topdirection"></div>
+          </ul>
+          <p class="plist_line"></p>
+        </div>
+        <div class="pl_table">
+          <table class="plist_table" style="border-collapse: collapse;">
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total2">70%</span>
+                <div class="container2">
+                  <div id="bar2" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total2">70%</span>
+                <div class="container2">
+                  <div id="bar2" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total2">70%</span>
+                <div class="container2">
+                  <div id="bar2" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total2">70%</span>
+                <div class="container2">
+                  <div id="bar2" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--project_list2-->
+  <div class="project_list">
+    <div class="project_list_con">
+      <div class="pl_img"> <img src="img/ghj_06.png" /> </div>
+      <div class="pl_list">
+        <div class="pl_title">
+          <ul class="pl_line">
+            <li class="pl_prolist2">债权转让</li>
+            <li class="pl_more2"><a href="javascript:;">更多&gt;</a></li>
+            <div class="topdirection2"></div>
+          </ul>
+          <p class="plist_line2"></p>
+        </div>
+        <div class="pl_table">
+          <table class="plist_table" style="border-collapse: collapse;">
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji2">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list2" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji2">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list2" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji2">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list2" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji2">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list2" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--project_list3-->
+  <div class="project_list">
+    <div class="project_list_con">
+      <div class="pl_img"> <img src="img/ghj_08.png" /> </div>
+      <div class="pl_list">
+        <div class="pl_title">
+          <ul class="pl_line">
+            <li class="pl_prolist3">项目列表</li>
+            <li class="pl_more3"><a href="javascript:;">更多&gt;</a></li>
+            <div class="topdirection3"></div>
+          </ul>
+          <p class="plist_line3"></p>
+        </div>
+        <div class="pl_table">
+          <table class="plist_table" style="border-collapse: collapse;">
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji3">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total3">70%</span>
+                <div class="container3">
+                  <div id="bar3" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list3" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji3">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total3">70%</span>
+                <div class="container3">
+                  <div id="bar3" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list3" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji3">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total3">70%</span>
+                <div class="container3">
+                  <div id="bar3" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list3" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji3">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total3">70%</span>
+                <div class="container3">
+                  <div id="bar3" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list3" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--project_list4-->
+  <div class="project_list">
+    <div class="project_list_con">
+      <div class="pl_img"> <img src="img/ghj_10.png" /> </div>
+      <div class="pl_list">
+        <div class="pl_title">
+          <ul class="pl_line">
+            <li class="pl_prolist4">债权转让</li>
+            <li class="pl_more4"><a href="javascript:;">更多&gt;</a></li>
+            <div class="topdirection4"></div>
+          </ul>
+          <p class="plist_line4"></p>
+        </div>
+        <div class="pl_table">
+          <table class="plist_table" style="border-collapse: collapse;">
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji4">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list4" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji4">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list4" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji4">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list4" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji4">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span class="pl_many" style="font-size: 16px;">2天12小时54分20秒</span> <span class="pl_shuju">剩余时间</span></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list4" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!--project_list3-->
+  <div class="project_list">
+    <div class="project_list_con">
+      <div class="pl_img"> <img src="img/ghj_09.png" /> </div>
+      <div class="pl_list">
+        <div class="pl_title">
+          <ul class="pl_line">
+            <li class="pl_prolist6">债权转让</li>
+            <li class="pl_more6"><a href="javascript:;">更多&gt;</a></li>
+            <div class="topdirection6"></div>
+          </ul>
+          <p class="plist_line6"></p>
+        </div>
+        <div class="pl_table">
+          <table class="plist_table" style="border-collapse: collapse;">
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji6">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total6">70%</span>
+                <div class="container6">
+                  <div id="bar6" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list6" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji6">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total6">70%</span>
+                <div class="container6">
+                  <div id="bar6" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list6" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji6">信用等级：A</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border-left:none;border-right: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border-left:none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total6">70%</span>
+                <div class="container6">
+                  <div id="bar6" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list6" /></td>
+            </tr>
+            <tr>
+              <td><span class="pl_add">深圳投资城</span> <span class="pl_add">43271110</span> <span class="pl_dengji6">信用等级：A</span></td>
+              <td style="border: none;"><span class="pl_many">10%</span> <span class="pl_shuju">年利率</span></td>
+              <td style="border: none;"><span class="pl_many">6个月</span> <span>还款期限</span></td>
+              <td style="border: none;"><span class="pl_many">100.00元</span> <span class="pl_shuju">借款金额</span></td>
+              <td><span id="total6">70%</span>
+                <div class="container6">
+                  <div id="bar6" style="width:70%;"></div>
+                </div></td>
+              <td><input type="button" value="立即投标" class="pl_btn_list6" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--官方公告-->
+  <div class="project_list">
+    <div class="project_list_con">
+      <div class="pl_img"> <img src="img/ghj_12.png" /> </div>
+      <div class="pl_list">
+        <div class="pl_title">
+          <ul class="pl_line">
+            <li class="pl_prolist5">官方公告</li>
+            <li class="pl_more5"><a href="javascript:;">更多&gt;</a></li>
+            <div class="topdirection5"></div>
+          </ul>
+          <p class="plist_line5"></p>
+        </div>
+        <div class="pl_table">
+          <table class="website_table">
+            <tr>
+              <td style="width: 33%;"><img src="img/we_22.png" style="width: 100%;"/></td>
+              <td style="width: 33%;"><img src="img/we_24.png" style="width: 100%;"/></td>
+              <td style="width: 33%;"><img src="img/we_26.png" style="width: 100%;"/></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--footer-->
+  <div class="footer">
+    <div class="footer_con">
+      <div class="footer_nav">
+        <ul class="footer_list">
+          <li><a href="javascript:;">关于我们</a></li>
+          <li><a href="javascript:;">新手入门</a></li>
+          <li><a href="javascript:;">我要借款</a></li>
+          <li><a href="javascript:;">我要理财</a></li>
+          <li><a href="javascript:;">帮助中心</a></li>
+          <li><a href="javascript:;">利息计算器</a></li>
+        </ul>
+        <ul class="footer_we">
+          <li>关注我们：</li>
+          <li class="f_yuan"><span class="icon-home-05"></span></li>
+          <li>关注微博</li>
+          <li class="f_yuan"><span class="icon-home-04"></span></li>
+          <li>关注微信</li>
+        </ul>
+        <ul class="footer_link">
+          <li>友情链接：网贷平台 保险机构 财富动力 网证券之星 今日汇率网 中金外汇网 络投资 股权众筹 保信贵金属 互联网金融 大连金融网 银行贷款利率 信托产品房产  贷款保险网 沈阳p2p 理财博凯</li>
+        </ul>
+      </div>
+      <div class="footer_right">
+        <ul class="footer_call">
+          <li> <span class="icon-home-09 foot_icon"></span> <span class="foot_call">4009-150-151</span> <span class="foot_time">客服工作时间：9:00-21:00</span> </li>
+        </ul>
+        <ul class="foot_link_pic">
+          <li><img src="img/abcd_08_06.png"/></li>
+          <li><img src="img/abcd_08_08.png"/></li>
+          <li><img src="img/abcd_08_10.png"/></li>
+          <li><img src="img/abcd_08_03.png"/></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
+</div>
+</body>
+</html>

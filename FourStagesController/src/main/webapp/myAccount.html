@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="css/home.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/narrow.css" rel="stylesheet" type="text/css" /> -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/site.css" rel="stylesheet" type="text/css" />
+    <link href="css/style2.css" rel="stylesheet" type="text/css" />
+    <link href="css/date.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/ppcommon.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <title>我的账户</title>
+</head>
+<style type="text/css">
+  @media screen and (min-width: 1380px){
+  .p_left_navbox{width: 16%;}
+  .p_right_wordbox{width: 82%;}
+  .welcome{width: 85%;}
+  .p_zh_navul>li>h4>a{width: 70%;text-align: center;padding-left: 0px;padding-right: 30px;}
+}
+</style>
+<body>
+    <!-- 右边 浮窗 -->
+    <ul class="p_right_slide_bar">
+        <li><a href="#" class="p_rt_jisuanqi" title="理财计算器"></a></li>
+        <li>
+            <a href="#" class="p_rt_shoujier" title="手机APP"></a>
+            <div class="p_rtn03 none">
+                <span class="p_rtn04"></span>
+                <span class="p_rtn05"></span>
+                <dl>
+                    <dt><img src="img/p_erwm.png" width="130" height="130"></dt>
+                    <dd>安卓手机APP</dd>
+                </dl>
+                <dl><!-- 不要两个就注释掉这个dl即可 -->
+                    <dt><img src="img/p_erwm.png" width="130" height="130"></dt>
+                    <dd>苹果手机APP</dd>
+                </dl>
+            </div>
+        </li>
+        <li><a href="#" class="p_rt_qqkefu" title="QQ客服"></a></li>
+        <li><a href="javascript:void(0)" class="p_rt_gotop" title="返回顶部"></a></li>
+    </ul>
+            
+    <!-- header头部 -->
+<div class="page"> 
+  <!--header-->
+  <div class="header" >
+    <div class="top">
+      <div class="top_con">
+        <ul class="top_left">
+          <li><span class="icon-home-02"></span><a href="javascript:;">加入收藏</a></li>
+          <li><span class="icon-home-05"></span><a href="javascript:;">关注我们</a></li>
+          <li><span class="icon-home-03"></span><a href="javascript:;">在线客服</a></li>
+        </ul>
+        <ul class="top_right">
+          <li>你好，欢迎来到煎饼金融！</li>
+          <li>
+            <a href="#"><span class="btn_geren"><i class="ico-home-16"></i>嘻嘻哈哈</span></a>
+          </li>
+          <li>
+            <a href="#"><span class="btn_tuichu">退出</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="nav_con">
+        <ul class="nav_logo">
+          <li></li>
+          <li class="jianbing">煎饼金融</li>
+          <li></li>
+        </ul>
+        <ul class="nav_indro">
+          <!-- <li class="l_one">安全网贷系统</li> -->
+          <li class="l_two">SHOVEBANK.COM</li>
+          <li class="l_three">中国最大的P2P系统服务商</li>
+        </ul>
+        <ul class="nav_list">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="11.html">我要投资</a></li>
+          <li><a href="debt1.html">债权转让</a></li>
+          <li><a href="myAccount.html">我的账户</a></li>
+          <li><a href="javascript:;">财富资讯</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <!--内容区-->
+    <div class="p_bg_f6 pt30">
+        <div class="p_main">
+        	<p class="p_rz_ts">
+        		您还未进行邮箱认证！！ 去进行邮箱认证&nbsp;
+            <i class="ico-home-04"></i>
+        	</p>
+            <div class="clr mt20">
+                <div class="p_left_navbox">
+                    <ul class="p_zh_navul">
+                        <li>
+                            <h4>
+                                <a href="myAccount.html"><i class="ico-home-07"></i>账户总览</a>
+                            </h4>
+                        </li>
+                        <li>
+                            <h4>
+                                <a href="#"><i class="ico-home-10"></i>资金管理</a>
+                                <span class="ico-home-14"></span>
+                                <span class="ico-home-23" style="display:none;"></span>
+                            </h4>
+                            <ul class="p_zh_li_none">
+                                <li><a href="fund_details.html" class="click">资金明细</a></li>
+                                <li><a href="recharge.html">充值</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>
+                                <a href="#"><i class="ico-home-12"></i>投资管理</a>
+                                <span class="ico-home-14"></span>
+                                <span class="ico-home-23" style="display:none;"></span>
+                            </h4>
+                            <ul class="p_zh_li_none">
+                                <li><a href="msim_my.html">我的投资</a></li>
+                                <li><a href="debt.html">债权转让</a></li>
+                                <li><a href="invest_plan.html">投资统计</a></li>
+                                <li><a href="payment_details.html">回款明细</a></li>
+                                <li><a href="auto_bid.html">自动投标</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>
+                                <a href="#"><i class="ico-home-13"></i>账户管理</a>
+                                <span class="ico-home-14"></span>
+                                <span class="ico-home-23" style="display:none;"></span>
+                            </h4>
+                            <ul class="p_zh_li_none">
+                                <li><a href="#">个人基本资料</a></li>
+                                <li><a href="bankmanage.html">银行卡管理</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li>
+                            <h4>
+                                <a href="#"><i class="p_zh_i08"></i>GPS推广</a>
+                                <span></span>
+                            </h4>
+                            <ul class="none">
+                                <li><a href="#">我的推广链接</a></li>
+                                <li><a href="#">我成功推广的会员</a></li>
+                                <li><a href="#">我的推广收入</a></li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="p_right_wordbox">
+                   <div class="p_zh_xinxi clr">
+		                <div class="p_zh_touxbox">
+		                    <a href="#">
+		                    	<img src="img/tit.jpg" alt="" class="p_zh_pic" />
+		                    </a>
+		                    <ul class="welcome">
+		                    	<li>
+		                    		<div class="w-first">
+		                    			<div class="w-hello">您好！
+		                    			<span class="people">嘻嘻哈哈</span>
+		                    			</div>
+          										<div class="w-time">
+          											上次登录时间：<span class="time_des">2016-04-18-14:00</span>
+          										</div>
+          										<div class="w-toubiao">
+                                                    <a href="auto_bid.html">设置自动投标</a>
+          										</div>
+		                    		</div>
+		                    	</li>
+		                    	<li style="height:20px;">&nbsp;</li>
+		                    	<li>
+		                    		<i class="wel-icon-1" title="实名认证"></i>
+		                    		<i class="wel-icon-2" title="邮箱认证"></i>
+		                    		<i class="wel-icon-3" title="修改密码"></i>
+		                    		<i class="wel-icon-4" title="绑定手机"></i>
+		                    		<div class="people-str">
+		                    			安全等级：
+		                    			<span class="str-type">
+		                    				高
+		                    				<div class="str-bg"></div>
+		                    			</span>
+		                    		</div>
+		                    		<div class="people-jifen">
+		                    			总积分：50分（享受<span class="bfb">10%</span>管理费率）
+		                    		</div>
+		                    	</li>
+		                    </ul>
+		                </div>
+		                <ul class="p_moneybox">
+		                    <li>
+		                    	<div class="p_money_1">
+		                    		<h4>累计金额收益</h4>
+			                    	<span class="qian_icon">￥</span>
+			                    	<span class="qian_des">0.00</span>
+		                    	</div>
+		                    </li>
+		                    <li>
+		                    	<div class="p_money_1">
+		                    		<h4>冻结金额</h4>
+			                    	<span class="qian_icon">￥</span>
+			                    	<span class="qian_des">0.00</span>
+		                    	</div>
+		                    </li>
+		                    <li class="p_money_btn">
+		                    	<div class="p_money_2">
+		                    		<h4>可用余额</h4>          
+			                    	<span class="qian_icon">￥</span>
+			                    	<span class="qian_des">0.83</span> 	
+		                    	</div>
+                          <a href="recharge.html"><span class="p_money_btn1">充值</span></a>
+		                    	<a href="#"><span class="p_money_btn2">提现</span></a>
+		                    </li>
+		                </ul>
+		            </div>
+                <div class="p_zc_main">
+                    <ul class="p_zc_des">
+                      <li>
+                        <div class="p_zc_1">
+                          <span class="p_zc_1_l">资产概况</span>
+                          <span class="p_zc_dz">
+                            电子对账单
+                            <i class="ico-home-04"></i>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <ul class="p_zc_xq">
+                          <li>账户净资产</li>
+                          <li>账户余额</li>
+                          <li>待收总额</li>
+                          <li>待还金额</li>
+                        </ul>
+                        <ul class="p_zc_sz">
+                          <li>
+                            <span class="p_sz_qian">￥</span>
+                            <span class="p_sz_qian_des">101.75</span>
+                          </li>
+                          <li>=</li>
+                          <li>
+                            <span class="p_sz_qian">￥</span>
+                            <span class="p_sz_qian_des">0.83</span>
+                          </li>
+                          <li>+</li>
+                          <li>
+                            <span class="p_sz_qian">￥</span>
+                            <span class="p_sz_qian_des">100.92</span>
+                          </li>
+                          <li>-</li>
+                          <li>
+                            <span class="p_sz_qian">￥</span>
+                            <span class="p_sz_qian_des">0.00</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <ul class="p_zc_footer">
+                          <li>
+                            投资项目：回收中<span class="p_zc_sl1">0</span>笔&nbsp;投标中<span class="p_zc_sl2">0</span>笔
+                          </li>
+                          <li>
+                            转让项目：转让中<span class="p_zc_sl3">0</span>笔
+                          </li>
+                          <li>
+                            借款项目：还款中<span class="p_zc_sl4">0</span>笔&nbsp;借款中<span class="p_zc_sl5">0</span>笔
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+                <div class="p_rq_main">
+                  <!-- <div class="p_rq_left" id="demo"></div> -->
+                  <script type="text/javascript">
+                    laydate({
+                        elem:'#demo'
+                    })                
+                   function dispatch(el, type){
+                        var evt = document.createEvent('Event');
+                        evt.initEvent(type,true,true);
+                        el.dispatchEvent(evt);
+                    }
+                    var d1 = document.getElementById('demo');
+                    dispatch(demo, 'click');
+                  </script>
+                  <div class="p_rq_left">
+                      <div class="p_rq_left_top">
+                         <div class="p_rq_left_s">
+                           <span class="p_left_radius1"></span>
+                           收款日
+                         </div>
+                         <div class="p_rq_left_h">
+                           <span class="p_left_radius2"></span>
+                           还款日
+                         </div>
+                         <div class="p_rq_left_date">
+                          <span class="p_left_date_radius1"></span>
+                           <span class="p_left_date_year">2016</span>年
+                           <span class="p_left_date_radius"></span>
+                           <span class="p_left_date_radius1"></span>
+                           <span class="p_left_date_month">04</span>月
+                           <span class="p_left_date_radius" style="margin-right:5px;"></span>
+                         </div>
+                      </div>
+                      <div class="p_left_rl">
+                          <table border="1">
+                            <tr>
+                              <td class="td_tit">日</td>
+                              <td class="td_tit">一</td>
+                              <td class="td_tit">二</td>
+                              <td class="td_tit">三</td>
+                              <td class="td_tit">四</td>
+                              <td class="td_tit">五</td>
+                              <td class="td_tit">六</td>
+                            </tr>
+                            <tr>
+                              <td style="color:#aeaeae;">26</td>
+                              <td style="color:#aeaeae;">27</td>
+                              <td style="color:#aeaeae;">28</td>
+                              <td style="color:#aeaeae;">29</td>
+                              <td style="color:#aeaeae;">30</td>
+                              <td>1</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>5</td>
+                              <td>6</td>
+                              <td>7</td>
+                              <td>8</td>
+                              <td>9</td>
+                            </tr>
+                            <tr>
+                              <td class="td_color">
+                                10
+                                <span class="p_left_radius3" style="left:33px;"></span> 
+                                <span class="p_left_radius4" style="left:7px;"></span> 
+                              </td>
+                              <td>11</td>
+                              <td>12</td>
+                              <td>13</td>
+                              <td>14</td>
+                              <td>15</td>
+                              <td>16</td>
+                            </tr>
+                            <tr>
+                              <td>17</td>
+                              <td>18</td>
+                              <td class="td_color">
+                                19
+                               <span class="p_left_radius3"></span> 
+                              </td>
+                              <td>20</td>
+                              <td>21</td>
+                              <td>22</td>
+                              <td>23</td>
+                            </tr>
+                            <tr>
+                              <td class="td_color">
+                                24
+                                <span class="p_left_radius4"></span> 
+                              </td>
+                              <td>25</td>
+                              <td>26</td>
+                              <td>27</td>
+                              <td>28</td>
+                              <td>29</td>
+                              <td>30</td>
+                            </tr>
+                            <tr style="color:#aeaeae;">
+                              <td>1</td>
+                              <td>2</td>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>5</td>
+                              <td>6</td>
+                              <td>7</td>
+                            </tr>
+                          </table>
+                      </div>
+                  </div>
+                  <div class="p_rq_right">
+                     <ul class="p_rq_right_des">
+                       <li>
+                         <span class="p_rq_year">2016</span> 年
+                         <span class="p_rq_month">4</span> 月
+                       </li>
+                       <li>
+                         <div class="p_right_sl">
+                             回款共 <span class="p_right_sl1">0</span> 笔 
+                             &nbsp;&nbsp;回收总额 <span class="p_right_sl_icon">￥</span>
+                             <span class="p_right_sl1_qian">0.00</span>
+                         </div>
+                         <div class="p_right_sl">
+                             回款共 <span class="p_right_sl2">0</span> 笔
+                             &nbsp;&nbsp;应还总额 <span class="p_right_sl_icon">￥</span>
+                             <span class="p_right_sl2_qian">0.00</span>
+                         </div>
+                       </li>
+                       <li>
+                         <div class="p_right_money">
+                            本月最近待收： <span class="p_right_money1">无</span>
+                         </div>
+                         <div class="p_right_money">
+                            本月最近待还： <span class="p_right_money2">无</span>
+                         </div>
+                       </li>
+                     </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="footer">
+	    <div class="footer_con">
+	      <div class="footer_nav">
+	        <ul class="footer_list">
+	          <li><a href="javascript:;">关于我们</a></li>
+	          <li><a href="javascript:;">新手入门</a></li>
+	          <li><a href="javascript:;">我要借款</a></li>
+	          <li><a href="javascript:;">我要理财</a></li>
+	          <li><a href="javascript:;">帮助中心</a></li>
+	          <li><a href="javascript:;">利息计算器</a></li>
+	        </ul>
+	        <ul class="footer_we">
+	          <li>关注我们：</li>
+	          <li class="f_yuan"><span class="icon-home-05"></span></li>
+	          <li>关注微博</li>
+	          <li class="f_yuan"><span class="icon-home-04"></span></li>
+	          <li>关注微信</li>
+	        </ul>
+	        <ul class="footer_link">
+	          <li>友情链接：网贷平台 保险机构 财富动力 网证券之星 今日汇率网 中金外汇网 络投资 股权众筹 保信贵金属 互联网金融 大连金融网 银行贷款利率 信托产品房产  贷款保险网 沈阳p2p 理财博凯</li>
+	        </ul>
+	      </div>
+	      <div class="footer_right">
+	        <ul class="footer_call">
+	          <li> <span class="icon-home-09 foot_icon"></span> <span class="foot_call">4009-150-151</span> <span class="foot_time">客服工作时间：9:00-21:00</span> </li>
+	        </ul>
+	        <ul class="foot_link_pic">
+	          <li><img src="img/abcd_08_06.png"/></li>
+	          <li><img src="img/abcd_08_08.png"/></li>
+	          <li><img src="img/abcd_08_10.png"/></li>
+	          <li><img src="img/abcd_08_03.png"/></li>
+	        </ul>
+      	</div>
+    </div>
+  </div>
+  <p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.dao.TopupMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.pojo.Topup" >
+    <id column="topupid" property="topupid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="topupnumber" property="topupnumber" jdbcType="VARCHAR" />
+    <result column="topupleixing" property="topupleixing" jdbcType="VARCHAR" />
+    <result column="topupfangshi" property="topupfangshi" jdbcType="VARCHAR" />
+    <result column="topupbeizhu" property="topupbeizhu" jdbcType="VARCHAR" />
+    <result column="topupzhuangtai" property="topupzhuangtai" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    topupid, userid, topupnumber, topupleixing, topupfangshi, topupbeizhu, topupzhuangtai
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.pojo.TopupExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from topup
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from topup
+    where topupid = #{topupid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from topup
+    where topupid = #{topupid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.pojo.TopupExample" >
+    delete from topup
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.pojo.Topup" >
+    insert into topup (topupid, userid, topupnumber, 
+      topupleixing, topupfangshi, topupbeizhu, 
+      topupzhuangtai)
+    values (#{topupid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{topupnumber,jdbcType=VARCHAR}, 
+      #{topupleixing,jdbcType=VARCHAR}, #{topupfangshi,jdbcType=VARCHAR}, #{topupbeizhu,jdbcType=VARCHAR}, 
+      #{topupzhuangtai,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.pojo.Topup" >
+    insert into topup
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="topupid != null" >
+        topupid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="topupnumber != null" >
+        topupnumber,
+      </if>
+      <if test="topupleixing != null" >
+        topupleixing,
+      </if>
+      <if test="topupfangshi != null" >
+        topupfangshi,
+      </if>
+      <if test="topupbeizhu != null" >
+        topupbeizhu,
+      </if>
+      <if test="topupzhuangtai != null" >
+        topupzhuangtai,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="topupid != null" >
+        #{topupid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="topupnumber != null" >
+        #{topupnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="topupleixing != null" >
+        #{topupleixing,jdbcType=VARCHAR},
+      </if>
+      <if test="topupfangshi != null" >
+        #{topupfangshi,jdbcType=VARCHAR},
+      </if>
+      <if test="topupbeizhu != null" >
+        #{topupbeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="topupzhuangtai != null" >
+        #{topupzhuangtai,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.pojo.TopupExample" resultType="java.lang.Integer" >
+    select count(*) from topup
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update topup
+    <set >
+      <if test="record.topupid != null" >
+        topupid = #{record.topupid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null" >
+        userid = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.topupnumber != null" >
+        topupnumber = #{record.topupnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.topupleixing != null" >
+        topupleixing = #{record.topupleixing,jdbcType=VARCHAR},
+      </if>
+      <if test="record.topupfangshi != null" >
+        topupfangshi = #{record.topupfangshi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.topupbeizhu != null" >
+        topupbeizhu = #{record.topupbeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.topupzhuangtai != null" >
+        topupzhuangtai = #{record.topupzhuangtai,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update topup
+    set topupid = #{record.topupid,jdbcType=INTEGER},
+      userid = #{record.userid,jdbcType=INTEGER},
+      topupnumber = #{record.topupnumber,jdbcType=VARCHAR},
+      topupleixing = #{record.topupleixing,jdbcType=VARCHAR},
+      topupfangshi = #{record.topupfangshi,jdbcType=VARCHAR},
+      topupbeizhu = #{record.topupbeizhu,jdbcType=VARCHAR},
+      topupzhuangtai = #{record.topupzhuangtai,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.pojo.Topup" >
+    update topup
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="topupnumber != null" >
+        topupnumber = #{topupnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="topupleixing != null" >
+        topupleixing = #{topupleixing,jdbcType=VARCHAR},
+      </if>
+      <if test="topupfangshi != null" >
+        topupfangshi = #{topupfangshi,jdbcType=VARCHAR},
+      </if>
+      <if test="topupbeizhu != null" >
+        topupbeizhu = #{topupbeizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="topupzhuangtai != null" >
+        topupzhuangtai = #{topupzhuangtai,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where topupid = #{topupid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.pojo.Topup" >
+    update topup
+    set userid = #{userid,jdbcType=INTEGER},
+      topupnumber = #{topupnumber,jdbcType=VARCHAR},
+      topupleixing = #{topupleixing,jdbcType=VARCHAR},
+      topupfangshi = #{topupfangshi,jdbcType=VARCHAR},
+      topupbeizhu = #{topupbeizhu,jdbcType=VARCHAR},
+      topupzhuangtai = #{topupzhuangtai,jdbcType=VARCHAR}
+    where topupid = #{topupid,jdbcType=INTEGER}
+  </update>
+</mapper>

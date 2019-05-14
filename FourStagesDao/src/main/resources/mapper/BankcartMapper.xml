@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.dao.BankcartMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.pojo.Bankcart" >
+    <id column="bcid" property="bcid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="bccode" property="bccode" jdbcType="VARCHAR" />
+    <result column="bcname" property="bcname" jdbcType="VARCHAR" />
+    <result column="bcprovince" property="bcprovince" jdbcType="VARCHAR" />
+    <result column="bccity" property="bccity" jdbcType="VARCHAR" />
+    <result column="bcbranch" property="bcbranch" jdbcType="VARCHAR" />
+    <result column="bcchongzhimoney" property="bcchongzhimoney" jdbcType="VARCHAR" />
+    <result column="bcchongtime" property="bcchongtime" jdbcType="DATE" />
+    <result column="bcmoney" property="bcmoney" jdbcType="DOUBLE" />
+    <result column="bcflag" property="bcflag" jdbcType="VARCHAR" />
+    <result column="bcflag2" property="bcflag2" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    bcid, userid, bccode, bcname, bcprovince, bccity, bcbranch, bcchongzhimoney, bcchongtime, 
+    bcmoney, bcflag, bcflag2
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.pojo.BankcartExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bankcart
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bankcart
+    where bcid = #{bcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bankcart
+    where bcid = #{bcid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.pojo.BankcartExample" >
+    delete from bankcart
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.pojo.Bankcart" >
+    insert into bankcart (bcid, userid, bccode, 
+      bcname, bcprovince, bccity, 
+      bcbranch, bcchongzhimoney, bcchongtime, 
+      bcmoney, bcflag, bcflag2
+      )
+    values (#{bcid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{bccode,jdbcType=VARCHAR}, 
+      #{bcname,jdbcType=VARCHAR}, #{bcprovince,jdbcType=VARCHAR}, #{bccity,jdbcType=VARCHAR}, 
+      #{bcbranch,jdbcType=VARCHAR}, #{bcchongzhimoney,jdbcType=VARCHAR}, #{bcchongtime,jdbcType=DATE}, 
+      #{bcmoney,jdbcType=DOUBLE}, #{bcflag,jdbcType=VARCHAR}, #{bcflag2,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.pojo.Bankcart" >
+    insert into bankcart
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="bcid != null" >
+        bcid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="bccode != null" >
+        bccode,
+      </if>
+      <if test="bcname != null" >
+        bcname,
+      </if>
+      <if test="bcprovince != null" >
+        bcprovince,
+      </if>
+      <if test="bccity != null" >
+        bccity,
+      </if>
+      <if test="bcbranch != null" >
+        bcbranch,
+      </if>
+      <if test="bcchongzhimoney != null" >
+        bcchongzhimoney,
+      </if>
+      <if test="bcchongtime != null" >
+        bcchongtime,
+      </if>
+      <if test="bcmoney != null" >
+        bcmoney,
+      </if>
+      <if test="bcflag != null" >
+        bcflag,
+      </if>
+      <if test="bcflag2 != null" >
+        bcflag2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="bcid != null" >
+        #{bcid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="bccode != null" >
+        #{bccode,jdbcType=VARCHAR},
+      </if>
+      <if test="bcname != null" >
+        #{bcname,jdbcType=VARCHAR},
+      </if>
+      <if test="bcprovince != null" >
+        #{bcprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="bccity != null" >
+        #{bccity,jdbcType=VARCHAR},
+      </if>
+      <if test="bcbranch != null" >
+        #{bcbranch,jdbcType=VARCHAR},
+      </if>
+      <if test="bcchongzhimoney != null" >
+        #{bcchongzhimoney,jdbcType=VARCHAR},
+      </if>
+      <if test="bcchongtime != null" >
+        #{bcchongtime,jdbcType=DATE},
+      </if>
+      <if test="bcmoney != null" >
+        #{bcmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="bcflag != null" >
+        #{bcflag,jdbcType=VARCHAR},
+      </if>
+      <if test="bcflag2 != null" >
+        #{bcflag2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.pojo.BankcartExample" resultType="java.lang.Integer" >
+    select count(*) from bankcart
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bankcart
+    <set >
+      <if test="record.bcid != null" >
+        bcid = #{record.bcid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null" >
+        userid = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.bccode != null" >
+        bccode = #{record.bccode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bcname != null" >
+        bcname = #{record.bcname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bcprovince != null" >
+        bcprovince = #{record.bcprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bccity != null" >
+        bccity = #{record.bccity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bcbranch != null" >
+        bcbranch = #{record.bcbranch,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bcchongzhimoney != null" >
+        bcchongzhimoney = #{record.bcchongzhimoney,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bcchongtime != null" >
+        bcchongtime = #{record.bcchongtime,jdbcType=DATE},
+      </if>
+      <if test="record.bcmoney != null" >
+        bcmoney = #{record.bcmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="record.bcflag != null" >
+        bcflag = #{record.bcflag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bcflag2 != null" >
+        bcflag2 = #{record.bcflag2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bankcart
+    set bcid = #{record.bcid,jdbcType=INTEGER},
+      userid = #{record.userid,jdbcType=INTEGER},
+      bccode = #{record.bccode,jdbcType=VARCHAR},
+      bcname = #{record.bcname,jdbcType=VARCHAR},
+      bcprovince = #{record.bcprovince,jdbcType=VARCHAR},
+      bccity = #{record.bccity,jdbcType=VARCHAR},
+      bcbranch = #{record.bcbranch,jdbcType=VARCHAR},
+      bcchongzhimoney = #{record.bcchongzhimoney,jdbcType=VARCHAR},
+      bcchongtime = #{record.bcchongtime,jdbcType=DATE},
+      bcmoney = #{record.bcmoney,jdbcType=DOUBLE},
+      bcflag = #{record.bcflag,jdbcType=VARCHAR},
+      bcflag2 = #{record.bcflag2,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.pojo.Bankcart" >
+    update bankcart
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="bccode != null" >
+        bccode = #{bccode,jdbcType=VARCHAR},
+      </if>
+      <if test="bcname != null" >
+        bcname = #{bcname,jdbcType=VARCHAR},
+      </if>
+      <if test="bcprovince != null" >
+        bcprovince = #{bcprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="bccity != null" >
+        bccity = #{bccity,jdbcType=VARCHAR},
+      </if>
+      <if test="bcbranch != null" >
+        bcbranch = #{bcbranch,jdbcType=VARCHAR},
+      </if>
+      <if test="bcchongzhimoney != null" >
+        bcchongzhimoney = #{bcchongzhimoney,jdbcType=VARCHAR},
+      </if>
+      <if test="bcchongtime != null" >
+        bcchongtime = #{bcchongtime,jdbcType=DATE},
+      </if>
+      <if test="bcmoney != null" >
+        bcmoney = #{bcmoney,jdbcType=DOUBLE},
+      </if>
+      <if test="bcflag != null" >
+        bcflag = #{bcflag,jdbcType=VARCHAR},
+      </if>
+      <if test="bcflag2 != null" >
+        bcflag2 = #{bcflag2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where bcid = #{bcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.pojo.Bankcart" >
+    update bankcart
+    set userid = #{userid,jdbcType=INTEGER},
+      bccode = #{bccode,jdbcType=VARCHAR},
+      bcname = #{bcname,jdbcType=VARCHAR},
+      bcprovince = #{bcprovince,jdbcType=VARCHAR},
+      bccity = #{bccity,jdbcType=VARCHAR},
+      bcbranch = #{bcbranch,jdbcType=VARCHAR},
+      bcchongzhimoney = #{bcchongzhimoney,jdbcType=VARCHAR},
+      bcchongtime = #{bcchongtime,jdbcType=DATE},
+      bcmoney = #{bcmoney,jdbcType=DOUBLE},
+      bcflag = #{bcflag,jdbcType=VARCHAR},
+      bcflag2 = #{bcflag2,jdbcType=VARCHAR}
+    where bcid = #{bcid,jdbcType=INTEGER}
+  </update>
+</mapper>

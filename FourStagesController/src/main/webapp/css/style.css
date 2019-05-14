@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'login';
+    src: url('../fonts/icomoon.eot?t9vhr0');
+    src: url('../fonts/icomoon.eot?t9vhr0#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?t9vhr0') format('truetype'),
+        url('../fonts/icomoon.woff?t9vhr0') format('woff'),
+        url('../fonts/icomoon.svg?t9vhr0#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="login-"], [class*="login-"],[class^="ico-home-"], [class*=" ico-home-"],[class^="wel-icon-"]{
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'login' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.login-icon-pic:before {
+    content: "\e902";
+}
+.login-close:before {
+    content: "\e901";
+}
+.login-icon-pic1:before {
+   content: "\e900";
+}
+.login-footer:after {
+    content: "\e90f";
+}
+.login-dl:after{
+    content: "\e90f";
+}
+.icon-home-01:before {
+    content: "\e900";
+}
+.icon-home-02:before {
+    content: "\e901";
+}
+.icon-home-03:before {
+    content: "\e902";
+}
+.ico-home-04:before {
+    content: "\e90f";
+}
+.ico-home-05:before {
+    content: "\e908";
+}
+.icon-home-06:before {
+    content: "\e907";
+}
+.ico-home-07:before {
+    content: "\e906";
+}
+.icon-home-08:before {
+    content: "\e909";
+}
+.ico-home-09:before {
+    content: "\e90a";
+}
+.ico-home-10:before {
+    content: "\e90b";
+}
+.ico-home-11:before {
+    content: "\e90c";
+}
+.ico-home-12:before {
+    content: "\e919";
+}
+.ico-home-13:before {
+    content: "\e90d";
+}
+.ico-home-14:before {
+    content: "\e90e";
+}
+.ico-home-15:before {
+    content: "\e910";
+}
+.ico-home-16:before{
+    content: "\e911";
+}
+.icon-home-17:before {
+    content: "\e912";
+}
+.icon-home-18:before {
+    content: "\e913";
+}
+.icon-home-19:before {
+    content: "\e914";
+}
+.icon-home-20:before {
+    content: "\e915";
+}
+.ico-home-21:before {
+    content: "\e916";
+}
+.ico-home-22:before {
+    content: "\e917";
+}
+.ico-home-23:before {
+    content: "\e918";
+}
+.wel-icon-1:after{
+    content: "\e911"
+}
+.wel-icon-2:after{
+    content: "\e912"
+}
+.wel-icon-3:after{
+    content: "\e913"
+}
+.wel-icon-4:after{
+    content: "\e914"
+}
+

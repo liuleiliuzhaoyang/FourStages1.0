@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.dao.ProjectMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.pojo.Project" >
+    <id column="projectid" property="projectid" jdbcType="INTEGER" />
+    <result column="projectname" property="projectname" jdbcType="VARCHAR" />
+    <result column="projectlilv" property="projectlilv" jdbcType="DOUBLE" />
+    <result column="projectqixian" property="projectqixian" jdbcType="VARCHAR" />
+    <result column="projectmoney" property="projectmoney" jdbcType="VARCHAR" />
+    <result column="projectflag" property="projectflag" jdbcType="VARCHAR" />
+    <result column="projectflag2" property="projectflag2" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    projectid, projectname, projectlilv, projectqixian, projectmoney, projectflag, projectflag2
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.pojo.ProjectExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from project
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from project
+    where projectid = #{projectid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from project
+    where projectid = #{projectid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.pojo.ProjectExample" >
+    delete from project
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.pojo.Project" >
+    insert into project (projectid, projectname, projectlilv, 
+      projectqixian, projectmoney, projectflag, 
+      projectflag2)
+    values (#{projectid,jdbcType=INTEGER}, #{projectname,jdbcType=VARCHAR}, #{projectlilv,jdbcType=DOUBLE}, 
+      #{projectqixian,jdbcType=VARCHAR}, #{projectmoney,jdbcType=VARCHAR}, #{projectflag,jdbcType=VARCHAR}, 
+      #{projectflag2,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.pojo.Project" >
+    insert into project
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="projectid != null" >
+        projectid,
+      </if>
+      <if test="projectname != null" >
+        projectname,
+      </if>
+      <if test="projectlilv != null" >
+        projectlilv,
+      </if>
+      <if test="projectqixian != null" >
+        projectqixian,
+      </if>
+      <if test="projectmoney != null" >
+        projectmoney,
+      </if>
+      <if test="projectflag != null" >
+        projectflag,
+      </if>
+      <if test="projectflag2 != null" >
+        projectflag2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="projectid != null" >
+        #{projectid,jdbcType=INTEGER},
+      </if>
+      <if test="projectname != null" >
+        #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="projectlilv != null" >
+        #{projectlilv,jdbcType=DOUBLE},
+      </if>
+      <if test="projectqixian != null" >
+        #{projectqixian,jdbcType=VARCHAR},
+      </if>
+      <if test="projectmoney != null" >
+        #{projectmoney,jdbcType=VARCHAR},
+      </if>
+      <if test="projectflag != null" >
+        #{projectflag,jdbcType=VARCHAR},
+      </if>
+      <if test="projectflag2 != null" >
+        #{projectflag2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.pojo.ProjectExample" resultType="java.lang.Integer" >
+    select count(*) from project
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update project
+    <set >
+      <if test="record.projectid != null" >
+        projectid = #{record.projectid,jdbcType=INTEGER},
+      </if>
+      <if test="record.projectname != null" >
+        projectname = #{record.projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectlilv != null" >
+        projectlilv = #{record.projectlilv,jdbcType=DOUBLE},
+      </if>
+      <if test="record.projectqixian != null" >
+        projectqixian = #{record.projectqixian,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectmoney != null" >
+        projectmoney = #{record.projectmoney,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectflag != null" >
+        projectflag = #{record.projectflag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectflag2 != null" >
+        projectflag2 = #{record.projectflag2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update project
+    set projectid = #{record.projectid,jdbcType=INTEGER},
+      projectname = #{record.projectname,jdbcType=VARCHAR},
+      projectlilv = #{record.projectlilv,jdbcType=DOUBLE},
+      projectqixian = #{record.projectqixian,jdbcType=VARCHAR},
+      projectmoney = #{record.projectmoney,jdbcType=VARCHAR},
+      projectflag = #{record.projectflag,jdbcType=VARCHAR},
+      projectflag2 = #{record.projectflag2,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.pojo.Project" >
+    update project
+    <set >
+      <if test="projectname != null" >
+        projectname = #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="projectlilv != null" >
+        projectlilv = #{projectlilv,jdbcType=DOUBLE},
+      </if>
+      <if test="projectqixian != null" >
+        projectqixian = #{projectqixian,jdbcType=VARCHAR},
+      </if>
+      <if test="projectmoney != null" >
+        projectmoney = #{projectmoney,jdbcType=VARCHAR},
+      </if>
+      <if test="projectflag != null" >
+        projectflag = #{projectflag,jdbcType=VARCHAR},
+      </if>
+      <if test="projectflag2 != null" >
+        projectflag2 = #{projectflag2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where projectid = #{projectid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.pojo.Project" >
+    update project
+    set projectname = #{projectname,jdbcType=VARCHAR},
+      projectlilv = #{projectlilv,jdbcType=DOUBLE},
+      projectqixian = #{projectqixian,jdbcType=VARCHAR},
+      projectmoney = #{projectmoney,jdbcType=VARCHAR},
+      projectflag = #{projectflag,jdbcType=VARCHAR},
+      projectflag2 = #{projectflag2,jdbcType=VARCHAR}
+    where projectid = #{projectid,jdbcType=INTEGER}
+  </update>
+</mapper>

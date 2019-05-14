@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'jianbing';
+    src:    url('../font4/jianbing.eot?k7i3wn');
+    src:    url('../font4/jianbing.eot?k7i3wn#iefix') format('embedded-opentype'),
+    url('../font4/jianbing.ttf?k7i3wn') format('truetype'),
+    url('../font4/jianbing.woff?k7i3wn') format('woff'),
+    url('../font4/jianbing.svg?k7i3wn#jianbing') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-jianbing-"], [class*=" icon-jianbing-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'jianbing' !important;
+    /*speak: none;*/
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jianbing-10:before {
+    content: "\e900";
+}

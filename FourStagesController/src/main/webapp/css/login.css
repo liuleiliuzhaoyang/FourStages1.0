@@ -1,0 +1,18 @@
+@charset "utf-8";
+.regist_main .form{width:60%;margin:50px auto;padding:30px 0 20px 150px;font-size:14px;position:relative;z-index:99;border: 2px solid #ccc;}
+.regist_main .form-step-1 .input-box{width:258px;}
+.form .item{padding:0 0 25px;clear:both;zoom:1;}
+.regist_main .ui-btn{cursor:pointer;height:50px;line-height:50px;font-size:16px;margin-bottom: 10px;border: none;background: #f25d5c;color: #fff;width: 50%;}
+.regist_main .form .btn-box{padding:0 0 0 130px;}
+.regist_main .form .checkbox-box{padding:0 0 0 130px;overflow:hidden;height:42px;line-height:42px;margin:-15px 0 15px; overflow: hidden;}
+.regist_main .form .checkbox-box a:hover{color:#7faf2a; text-decoration:underline;}
+.form .item:after{content:" ";display:block;clear:both;height:0;font-size:0;visibility:hidden;}
+.form .label{font-size:16px;line-height:42px;width:130px;text-align:right;float:left;}
+.regist_main .input-box{margin:0 15px 0 0;overflow:hidden}
+.form .input-box{float:left;position:relative;border:1px solid #d2d2d2;}
+.form .input-box .ipt{padding:11px 10px;width:245px;font-size:14px;height:18px;line-height:18px;font-family:Microsoft YaHei,Simsun,Arial,Helvetica,sans-serif;float:left;border:0px;}
+.form .input-box:hover{border-color:#7faf2a;}
+.form .btn-box{overflow:hidden;}
+.form .btn-box a{color:#6ccc50;}
+.form .btn-box a:hover{text-decoration:underline;}
+.tx-login{width: 40%;padding-left: 60px;}
