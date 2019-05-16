@@ -1,8 +1,10 @@
 package com.qf.dao;
 
+import java.util.List;
+
+import com.qf.dto.AccountDto;
 import com.qf.pojo.Account;
 import com.qf.pojo.AccountExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface AccountMapper {
@@ -27,4 +29,6 @@ public interface AccountMapper {
     int updateByPrimaryKeySelective(Account record);
 
     int updateByPrimaryKey(Account record);
+
+    List<AccountDto> selectSiBiaoLianChan(Integer userid);
 }

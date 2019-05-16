@@ -1,8 +1,10 @@
 package com.qf.dao;
 
+import java.util.List;
+
+import com.qf.dto.UserInfoDto;
 import com.qf.pojo.Userinfo;
 import com.qf.pojo.UserinfoExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserinfoMapper {
@@ -27,4 +29,8 @@ public interface UserinfoMapper {
     int updateByPrimaryKeySelective(Userinfo record);
 
     int updateByPrimaryKey(Userinfo record);
+
+    UserInfoDto selectUserinfoBankcart(Integer userid);
+    //通过电话号码查找到整个对象
+    Userinfo getUserTel(String usertel);
 }

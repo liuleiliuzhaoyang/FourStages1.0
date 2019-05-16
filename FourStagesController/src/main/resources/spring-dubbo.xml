@@ -12,4 +12,7 @@
     <dubbo:registry address="zookeeper://10.12.159.134:2181" />
 
     <dubbo:reference interface="com.qf.service.UserInfoService" id="userInfoService"></dubbo:reference>
+    <dubbo:reference interface="com.qf.service.BankcartService" id="bankcartService"></dubbo:reference>
+    <dubbo:reference interface="com.qf.service.IdentifyService" id="identifyService"></dubbo:reference>
+    <dubbo:reference interface="com.qf.service.AccountService" id="accountService"></dubbo:reference>
 </beans>

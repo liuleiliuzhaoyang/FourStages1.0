@@ -44,4 +44,14 @@ public class Identify implements Serializable {
     public void setIdentifytel(String identifytel) {
         this.identifytel = identifytel == null ? null : identifytel.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Identify{" +
+                "identifyid=" + identifyid +
+                ", identifyname='" + identifyname + '\'' +
+                ", identifycode='" + identifycode + '\'' +
+                ", identifytel='" + identifytel + '\'' +
+                '}';
+    }
 }

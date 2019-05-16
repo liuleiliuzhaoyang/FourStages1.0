@@ -9,6 +9,12 @@
     <result column="projectmoney" property="projectmoney" jdbcType="VARCHAR" />
     <result column="projectflag" property="projectflag" jdbcType="VARCHAR" />
     <result column="projectflag2" property="projectflag2" jdbcType="VARCHAR" />
+    <result column="projectbianhao" property="projectbianhao" jdbcType="VARCHAR" />
+    <result column="projiectdengji" property="projiectdengji" jdbcType="VARCHAR" />
+    <result column="projectleixing" property="projectleixing" jdbcType="VARCHAR" />
+    <result column="projectjindu" property="projectjindu" jdbcType="VARCHAR" />
+    <result column="projectfaqishijain" property="projectfaqishijain" jdbcType="DATE" />
+    <result column="projectjieshushijain" property="projectjieshushijain" jdbcType="DATE" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -69,7 +75,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    projectid, projectname, projectlilv, projectqixian, projectmoney, projectflag, projectflag2
+    projectid, projectname, projectlilv, projectqixian, projectmoney, projectflag, projectflag2, 
+    projectbianhao, projiectdengji, projectleixing, projectjindu, projectfaqishijain, 
+    projectjieshushijain
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.pojo.ProjectExample" >
     select
@@ -104,10 +112,14 @@
   <insert id="insert" parameterType="com.qf.pojo.Project" >
     insert into project (projectid, projectname, projectlilv, 
       projectqixian, projectmoney, projectflag, 
-      projectflag2)
+      projectflag2, projectbianhao, projiectdengji, 
+      projectleixing, projectjindu, projectfaqishijain, 
+      projectjieshushijain)
     values (#{projectid,jdbcType=INTEGER}, #{projectname,jdbcType=VARCHAR}, #{projectlilv,jdbcType=DOUBLE}, 
       #{projectqixian,jdbcType=VARCHAR}, #{projectmoney,jdbcType=VARCHAR}, #{projectflag,jdbcType=VARCHAR}, 
-      #{projectflag2,jdbcType=VARCHAR})
+      #{projectflag2,jdbcType=VARCHAR}, #{projectbianhao,jdbcType=VARCHAR}, #{projiectdengji,jdbcType=VARCHAR}, 
+      #{projectleixing,jdbcType=VARCHAR}, #{projectjindu,jdbcType=VARCHAR}, #{projectfaqishijain,jdbcType=DATE}, 
+      #{projectjieshushijain,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.qf.pojo.Project" >
     insert into project
@@ -133,6 +145,24 @@
       <if test="projectflag2 != null" >
         projectflag2,
       </if>
+      <if test="projectbianhao != null" >
+        projectbianhao,
+      </if>
+      <if test="projiectdengji != null" >
+        projiectdengji,
+      </if>
+      <if test="projectleixing != null" >
+        projectleixing,
+      </if>
+      <if test="projectjindu != null" >
+        projectjindu,
+      </if>
+      <if test="projectfaqishijain != null" >
+        projectfaqishijain,
+      </if>
+      <if test="projectjieshushijain != null" >
+        projectjieshushijain,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="projectid != null" >
@@ -155,6 +185,24 @@
       </if>
       <if test="projectflag2 != null" >
         #{projectflag2,jdbcType=VARCHAR},
+      </if>
+      <if test="projectbianhao != null" >
+        #{projectbianhao,jdbcType=VARCHAR},
+      </if>
+      <if test="projiectdengji != null" >
+        #{projiectdengji,jdbcType=VARCHAR},
+      </if>
+      <if test="projectleixing != null" >
+        #{projectleixing,jdbcType=VARCHAR},
+      </if>
+      <if test="projectjindu != null" >
+        #{projectjindu,jdbcType=VARCHAR},
+      </if>
+      <if test="projectfaqishijain != null" >
+        #{projectfaqishijain,jdbcType=DATE},
+      </if>
+      <if test="projectjieshushijain != null" >
+        #{projectjieshushijain,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -188,6 +236,24 @@
       <if test="record.projectflag2 != null" >
         projectflag2 = #{record.projectflag2,jdbcType=VARCHAR},
       </if>
+      <if test="record.projectbianhao != null" >
+        projectbianhao = #{record.projectbianhao,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projiectdengji != null" >
+        projiectdengji = #{record.projiectdengji,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectleixing != null" >
+        projectleixing = #{record.projectleixing,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectjindu != null" >
+        projectjindu = #{record.projectjindu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectfaqishijain != null" >
+        projectfaqishijain = #{record.projectfaqishijain,jdbcType=DATE},
+      </if>
+      <if test="record.projectjieshushijain != null" >
+        projectjieshushijain = #{record.projectjieshushijain,jdbcType=DATE},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -201,7 +267,13 @@
       projectqixian = #{record.projectqixian,jdbcType=VARCHAR},
       projectmoney = #{record.projectmoney,jdbcType=VARCHAR},
       projectflag = #{record.projectflag,jdbcType=VARCHAR},
-      projectflag2 = #{record.projectflag2,jdbcType=VARCHAR}
+      projectflag2 = #{record.projectflag2,jdbcType=VARCHAR},
+      projectbianhao = #{record.projectbianhao,jdbcType=VARCHAR},
+      projiectdengji = #{record.projiectdengji,jdbcType=VARCHAR},
+      projectleixing = #{record.projectleixing,jdbcType=VARCHAR},
+      projectjindu = #{record.projectjindu,jdbcType=VARCHAR},
+      projectfaqishijain = #{record.projectfaqishijain,jdbcType=DATE},
+      projectjieshushijain = #{record.projectjieshushijain,jdbcType=DATE}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -227,6 +299,24 @@
       <if test="projectflag2 != null" >
         projectflag2 = #{projectflag2,jdbcType=VARCHAR},
       </if>
+      <if test="projectbianhao != null" >
+        projectbianhao = #{projectbianhao,jdbcType=VARCHAR},
+      </if>
+      <if test="projiectdengji != null" >
+        projiectdengji = #{projiectdengji,jdbcType=VARCHAR},
+      </if>
+      <if test="projectleixing != null" >
+        projectleixing = #{projectleixing,jdbcType=VARCHAR},
+      </if>
+      <if test="projectjindu != null" >
+        projectjindu = #{projectjindu,jdbcType=VARCHAR},
+      </if>
+      <if test="projectfaqishijain != null" >
+        projectfaqishijain = #{projectfaqishijain,jdbcType=DATE},
+      </if>
+      <if test="projectjieshushijain != null" >
+        projectjieshushijain = #{projectjieshushijain,jdbcType=DATE},
+      </if>
     </set>
     where projectid = #{projectid,jdbcType=INTEGER}
   </update>
@@ -237,7 +327,13 @@
       projectqixian = #{projectqixian,jdbcType=VARCHAR},
       projectmoney = #{projectmoney,jdbcType=VARCHAR},
       projectflag = #{projectflag,jdbcType=VARCHAR},
-      projectflag2 = #{projectflag2,jdbcType=VARCHAR}
+      projectflag2 = #{projectflag2,jdbcType=VARCHAR},
+      projectbianhao = #{projectbianhao,jdbcType=VARCHAR},
+      projiectdengji = #{projiectdengji,jdbcType=VARCHAR},
+      projectleixing = #{projectleixing,jdbcType=VARCHAR},
+      projectjindu = #{projectjindu,jdbcType=VARCHAR},
+      projectfaqishijain = #{projectfaqishijain,jdbcType=DATE},
+      projectjieshushijain = #{projectjieshushijain,jdbcType=DATE}
     where projectid = #{projectid,jdbcType=INTEGER}
   </update>
 </mapper>

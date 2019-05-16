@@ -125,4 +125,22 @@ public class Bankcart implements Serializable {
     public void setBcflag2(String bcflag2) {
         this.bcflag2 = bcflag2 == null ? null : bcflag2.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Bankcart{" +
+                "bcid=" + bcid +
+                ", userid=" + userid +
+                ", bccode='" + bccode + '\'' +
+                ", bcname='" + bcname + '\'' +
+                ", bcprovince='" + bcprovince + '\'' +
+                ", bccity='" + bccity + '\'' +
+                ", bcbranch='" + bcbranch + '\'' +
+                ", bcchongzhimoney='" + bcchongzhimoney + '\'' +
+                ", bcchongtime=" + bcchongtime +
+                ", bcmoney=" + bcmoney +
+                ", bcflag='" + bcflag + '\'' +
+                ", bcflag2='" + bcflag2 + '\'' +
+                '}';
+    }
 }

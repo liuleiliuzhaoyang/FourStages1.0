@@ -1,8 +1,9 @@
 package com.qf.dao;
 
+import java.util.List;
+
 import com.qf.pojo.Bankcart;
 import com.qf.pojo.BankcartExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface BankcartMapper {
@@ -27,4 +28,8 @@ public interface BankcartMapper {
     int updateByPrimaryKeySelective(Bankcart record);
 
     int updateByPrimaryKey(Bankcart record);
+
+    Bankcart selectByPrimaryKeyUserid(Integer userid);
+
+    int updatBankcartuserid(Bankcart bankcart);
 }

@@ -11,6 +11,7 @@
     <link href="css/style2.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/ppcommon.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.js"></script>
     <title>银行卡管理</title>
 </head>
 <style type="text/css">
@@ -130,7 +131,7 @@
                                 <span class="ico-home-23"></span>
                             </h4>
                             <ul class="p_zh_li_none" style="display:block">
-                                <li><a href="#">个人基本资料</a></li>
+                                <li><a href="geren.html">个人基本资料</a></li>
                                 <li><a href="bankmanage.html" class="click">银行卡管理</a></li>
                             </ul>
                         </li>
@@ -145,24 +146,24 @@
 		                          <span class="add_bank_tip">返回</span>
 		                        </div>
 	                        </a>
-	                        <div class="add_back_con">添加提现银行卡</div>
+	                        <div class="add_back_con">添加银行卡</div>
                         </div>
                 		<div class="bankmanage_add_main">
                 			<form action="" method="post" name="bankCashFrom" id="bankCashFrom">
-	                			<div class="add_bank_item">
-	                				<div class="bank_item_label" style="margin-left:10px;padding-right:5px;">提现账户：</div>
-	                				<div class="bank_item_con">张******</div>
-	                			</div>
+	                			<!--<div class="add_bank_item">-->
+	                				<!--<div class="bank_item_label" style="margin-left:10px;padding-right:5px;">账户 </div>-->
+	                				<!--<div class="bank_item_con"><input type="text" class="bank_item_ipt" name="zhang"/></div>-->
+	                			<!--</div>-->
 	                			<div class="add_bank_item">
 	                				<div class="bank_item_label">银行卡号</div>
 	                				<div class="bank_item_con">
-	                					<input type="text" class="bank_item_ipt"/>
+	                					<input type="text" class="bank_item_ipt" name="ying" placeholder="请输入19位卡号" value=""/>
 	                				</div>
 	                			</div>
 	                			<div class="add_bank_item">
 	                				<div class="bank_item_label">请选择银行名称</div>
 	                				<div class="bank_item_con">
-	                					<select name="" id="" class="bank_item_con_sel">
+	                					<select name="ming" id="" class="bank_item_con_sel">
 	                						<option value=""></option>
 	                						<option value="建设银行">建设银行</option>
 	                						<option value="中信银行">中信银行</option>
@@ -174,7 +175,7 @@
 	                				<div class="bank_item_label">提现银行卡地区</div>
 	                				<div class="bank_item_con">
 	                					<div class="bank_item_uc_sel" style="margin-right: 10px;">
-	                						<select name="" id="">
+	                						<select name="di" id="">
 	                							<option value="请选择">请选择</option>
 	                							<option value="1">北京</option>
 	                							<option value="2">天津</option>
@@ -182,21 +183,21 @@
 	                							<option value="4">上海</option>
 	                						</select>
 	                					</div>
-	                					<div class="bank_item_uc_sel">
-	                						<select name="" id="">
-	                							<option value="请选择">请选择</option>
-	                							<option value="1">北京</option>
-	                							<option value="2">天津</option>
-	                							<option value="3">重庆</option>
-	                							<option value="4">上海</option>
-	                						</select>
-	                					</div>
+	                					<!--<div class="bank_item_uc_sel">-->
+	                						<!--<select name="" id="">-->
+	                							<!--<option value="请选择">请选择</option>-->
+	                							<!--<option value="1">北京</option>-->
+	                							<!--<option value="2">天津</option>-->
+	                							<!--<option value="3">重庆</option>-->
+	                							<!--<option value="4">上海</option>-->
+	                						<!--</select>-->
+	                					<!--</div>-->
 	                				</div>
 	                			</div>
 	                			<div class="add_bank_item">
 	                				<div class="bank_item_label">开户行支行名称</div>
 	                				<div class="bank_item_con">
-	                					<input type="text" class="bank_item_ipt"/>
+	                					<input type="text" class="bank_item_ipt" name="kai"/>
 	                					<div class="bank_item_tips">
 	                						<span class="f12">
 	                							*（务必正确填写，否则会影响提现，不能及时到账）
@@ -207,7 +208,9 @@
 	                			<div class="add_bank_item_btn">
 	                				<div class="bank_item_btn_label"></div>
 	                				<div class="bank_item_btn_con">
-	                					<input type="submit" class="bank_item_ipt_btn" value="确定提交"/>
+	                					<!--<input type="submit" class="bank_item_ipt_btn" value="确定提交"/>-->
+                                        <button type="button" class="bank_item_ipt_btn" onclick="yinhangka()">确定提交</button>
+                                        <!--<a href="bankmanage_add_sucess.html" class="bank_item_ipt_btn">确定提交</a>-->
 	                				</div>
 	                			</div>
 	                		</form>
@@ -264,5 +267,36 @@
   </div>
   <p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
     </div>
+<script type="text/javascript">
+
+    function yinhangka(){
+        // var zhang = $("input[name='zhang']").val();
+        var ying = $("input[name='ying']").val();
+        var ming = $("select[name='ming']").val();
+        var di = $("select[name='di']").val();
+        var kai = $("input[name='kai']").val();
+        alert(ying);
+        // var huozhong = $("input[name='t6']").val();
+        $.ajax({
+            type:"post",
+            contentType:"application/json;charset=utf-8",
+            url:"insertBankcartSele",
+            data:JSON.stringify({
+                "bcid":null,
+                // "bcname":zhang,
+                "bccode":ying,
+                "bcbranch":ming,
+                "bcprovince":di,
+                "bcname":kai
+            }),
+            success:function (message) {
+                console.log(message)
+                window.location.href="bankmanage_add_sucess.html";
+            }
+        });
+
+    }
+
+</script>
 </body>
 </html>

@@ -255,4 +255,12 @@
       userflag2 = #{userflag2,jdbcType=VARCHAR}
     where userid = #{userid,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectUserinfoBankcart" resultType="com.qf.dto.UserInfoDto">
+      select * from userinfo us,bankcart ba where us.userid=ba.userid and us.userid=#{userid}
+  </select>
+  <select id="getUserTel" parameterType="java.lang.String" resultType="com.qf.pojo.Userinfo" >
+    select * from userinfo where usertel = #{usertel}
+  </select>
 </mapper>

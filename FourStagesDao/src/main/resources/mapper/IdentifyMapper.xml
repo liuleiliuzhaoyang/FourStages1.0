@@ -193,4 +193,7 @@
       identifytel = #{identifytel,jdbcType=VARCHAR}
     where identifyid = #{identifyid,jdbcType=INTEGER}
   </update>
+  <select id="getIdentifyTel" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from identify where identifytel = #{identifytel}
+  </select>
 </mapper>

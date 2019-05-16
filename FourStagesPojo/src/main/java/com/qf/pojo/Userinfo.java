@@ -84,4 +84,18 @@ public class Userinfo implements Serializable {
     public void setUserflag2(String userflag2) {
         this.userflag2 = userflag2 == null ? null : userflag2.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Userinfo{" +
+                "userid=" + userid +
+                ", username='" + username + '\'' +
+                ", usertel='" + usertel + '\'' +
+                ", userpass='" + userpass + '\'' +
+                ", userrname='" + userrname + '\'' +
+                ", useridentify='" + useridentify + '\'' +
+                ", userflag=" + userflag +
+                ", userflag2='" + userflag2 + '\'' +
+                '}';
+    }
 }

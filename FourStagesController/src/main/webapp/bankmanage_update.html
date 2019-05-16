@@ -10,6 +10,7 @@
     <link href="css/site.css" rel="stylesheet" type="text/css" />
     <link href="css/style2.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.js"></script>
     <script type="text/javascript" src="js/ppcommon.js"></script>
     <title>银行卡管理</title>
 </head>
@@ -130,7 +131,7 @@
                                 <span class="ico-home-23"></span>
                             </h4>
                             <ul class="p_zh_li_none" style="display:block">
-                                <li><a href="#">个人基本资料</a></li>
+                                <li><a href="geren.html">个人基本资料</a></li>
                                 <li><a href="bankmanage.html" class="click">银行卡管理</a></li>
                             </ul>
                         </li>
@@ -148,31 +149,33 @@
 	                        <div class="update_back_con">修改提现银行卡</div>
                         </div>
                 		<div class="bankmanage_update_main">
-                			<form action="" method="post" name="bankCashFrom" id="bankCashFrom">
+
 	                			<div class="update_bank_item" style="padding-bottom:00px;">
-	                				<div class="bank_up_item_label" style="margin-left:10px;padding-right:5px;">提现账户：</div>
-	                				<div class="bank_up_item_con">张******</div>
+	                				<div class="bank_up_item_label" style="margin-left:10px;padding-right:5px;">账户：</div>
+									<span id="a1"></span>
+	                				<!--<div class="bank_up_item_con">张******</div>-->
 	                			</div>
 	                			<div class="update_bank_item">
 	                				<div class="bank_up_item_label" style="margin-left:10px;padding-right:5px;">银行卡号：</div>
-	                				<div class="bank_up_item_con">6222******344</div>
+									<span id="a2"></span>
+	                				<!--<div class="bank_up_item_con">6222******344</div>-->
 	                			</div>
-	                			<div class="update_bank_item">
-	                				<div class="bank_up_item_label">当前银行卡号</div>
-	                				<div class="bank_up_item_con">
-	                					<input type="text" class="bank_up_item_ipt"/>
-	                				</div>
-	                			</div>
+	                			<!--<div class="update_bank_item">-->
+	                				<!--<div class="bank_up_item_label">当前银行卡号</div>-->
+	                				<!--<div class="bank_up_item_con">-->
+	                					<!--<input type="text" class="bank_up_item_ipt"/>-->
+	                				<!--</div>-->
+	                			<!--</div>-->
 	                			<div class="update_bank_item">
 	                				<div class="bank_up_item_label">银行卡号</div>
 	                				<div class="bank_up_item_con">
-	                					<input type="text" class="bank_up_item_ipt"/>
+	                					<input type="text" class="bank_up_item_ipt" name="q1"/>
 	                				</div>
 	                			</div>
 	                			<div class="update_bank_item">
 	                				<div class="bank_up_item_label">请选择银行名称</div>
 	                				<div class="bank_up_item_con">
-	                					<select name="" id="" class="bank_up_item_con_sel">
+	                					<select name="q2" id="" class="bank_up_item_con_sel">
 	                						<option value=""></option>
 	                						<option value="建设银行">建设银行</option>
 	                						<option value="中信银行">中信银行</option>
@@ -184,29 +187,29 @@
 	                				<div class="bank_up_item_label">提现银行卡地区</div>
 	                				<div class="bank_up_item_con">
 	                					<div class="bank_up_item_uc_sel" style="margin-right: 10px;">
-	                						<select name="" id="">
+	                						<select name="q3" id="">
 	                							<option value="请选择">请选择</option>
-	                							<option value="1">北京</option>
-	                							<option value="2">天津</option>
-	                							<option value="3">重庆</option>
-	                							<option value="4">上海</option>
+	                							<option>北京</option>
+	                							<option>天津</option>
+	                							<option>重庆</option>
+	                							<option>上海</option>
 	                						</select>
 	                					</div>
-	                					<div class="bank_up_item_uc_sel">
-	                						<select name="" id="">
-	                							<option value="请选择">请选择</option>
-	                							<option value="1">北京</option>
-	                							<option value="2">天津</option>
-	                							<option value="3">重庆</option>
-	                							<option value="4">上海</option>
-	                						</select>
-	                					</div>
+	                					<!--<div class="bank_up_item_uc_sel">-->
+	                						<!--<select name="" id="">-->
+	                							<!--<option value="请选择">请选择</option>-->
+	                							<!--<option value="1">北京</option>-->
+	                							<!--<option value="2">天津</option>-->
+	                							<!--<option value="3">重庆</option>-->
+	                							<!--<option value="4">上海</option>-->
+	                						<!--</select>-->
+	                					<!--</div>-->
 	                				</div>
 	                			</div>
 	                			<div class="update_bank_item">
 	                				<div class="bank_up_item_label">开户行支行名称</div>
 	                				<div class="bank_up_item_con">
-	                					<input type="text" class="bank_up_item_ipt"/>
+	                					<input type="text" class="bank_up_item_ipt" name="q4"/>
 	                					<div class="bank_update_item_tips">
 	                						<span class="f12">
 	                							*（务必正确填写，否则会影响提现，不能及时到账）
@@ -214,30 +217,25 @@
 	                					</div>
 	                				</div>
 	                			</div>
-	                			<div class="update_bank_item">
-	                				<div class="bank_up_item_label">交易密码</div>
-	                				<div class="bank_up_item_con">
-	                					<input type="text" class="bank_up_item_ipt"/>
-	                				</div>
-	                			</div>
-	                			<div class="update_bank_item">
-	                				<div class="bank_up_item_label" style="margin-left:10px;padding-right:5px;">当前手机号：</div>
-	                				<div class="bank_up_item_con">136****2173</div>
-	                			</div>
-	                			<div class="update_bank_item">
-	                				<div class="bank_up_item_label">*验证码</div>
-	                				<div class="bank_up_item_con">
-	                					<input type="text" class="bank_up_item_ipt bank_up_item_ipt1"/>
-	                					<span class="bank_up_item_con_btn">获取验证码</span>
-	                				</div>
-	                			</div>
+	                			<!--<div class="update_bank_item">-->
+	                				<!--<div class="bank_up_item_label">交易密码</div>-->
+	                				<!--<div class="bank_up_item_con">-->
+	                					<!--<input type="text" class="bank_up_item_ipt" name=""/>-->
+	                				<!--</div>-->
+	                			<!--</div>-->
+	                			<!--<div class="update_bank_item">-->
+	                				<!--<div class="bank_up_item_label" style="margin-left:10px;padding-right:5px;">当前手机号：</div>-->
+	                				<!--<div class="bank_up_item_con">136****2173</div>-->
+	                			<!--</div>-->
 	                			<div class="update_bank_item_btn">
 	                				<div class="bank_up_item_btn_label"></div>
 	                				<div class="bank_up_item_btn_con">
-	                					<input type="submit" class="bank_up_item_ipt_btn" value="确定提交"/>
+	                					<!--<input type="submit" class="bank_up_item_ipt_btn" value="确定提交"/>-->
+										<!--<a href="bankmanage_add_sucess.html" class="bank_item_ipt_btn">确定提交</a>-->
+										<button class="bank_item_ipt_btn" onclick="tijiaoyin()">确定提交</button>
 	                				</div>
 	                			</div>
-	                		</form>
+
                 		</div>
                 		<div class="bankmanage_update_alert">
                     		<div class="bankmanage_update_alert_tit">温馨提示：</div>
@@ -291,5 +289,40 @@
   </div>
   <p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
     </div>
+<script type="text/javascript">
+	var ww = sessionStorage.getItem('id');
+	var name = sessionStorage.getItem('user');
+
+	var code = sessionStorage.getItem('code');
+
+	$("#a1").html(name);
+	$("#a2").html(code);
+
+	function tijiaoyin() {
+        alert("qqqqq");
+        var kahao = $("input[name='q1']").val();
+        var yinghang = $("select[name='q2']").val();
+        var diqu = $("select[name='q3']").val();
+        var zhihang = $("input[name='q4']").val();
+		$.ajax({
+			type:"post",
+			url:"/updatBankcartuserid",
+			contentType:"application/json;charset=utf-8",
+            data:JSON.stringify({
+				"userid": ww,
+				"bccode": kahao,
+				"bcbranch": yinghang,
+				"bcprovince": diqu,
+				"bcname": zhihang
+			}),
+			success:function (data) {
+			    alert("dddddddddddd");
+                window.location.href = "bankmanage_add_sucess.html";
+            }
+		});
+
+		alert("sss");
+	}
+</script>
 </body>
 </html>

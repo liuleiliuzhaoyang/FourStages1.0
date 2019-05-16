@@ -149,30 +149,57 @@ p.login-footer{
 	     	</div>
 	     	<div class="login-popbody">
 	     		<h4>为提升账户安全性，已取消昵称登陆</h4>
-	            <form class="loginform" name="loginform" action="" method="post">
+
                      <div class="login-icon">
 	                     <div class="login-icon-pic">
 	                     	<img src="img/ymh.png"/>
 	                     </div>
-						 <input class="ipt" type="text" name="yh" placeholder="输入手机号或邮箱" />
+						 <input id="usertel" class="ipt" type="text" name="yh" placeholder="输入手机号或邮箱" />
 					 </div>
                      <div class="login-icon">
 	                     <div class="login-icon-pic">
 	                     	<img src="img/mm.png"/>
 	                     </div>
-						 <input class="ipt" type="password" name="pwd" placeholder="输入登陆密码" />
+						 <input id="userpass" class="ipt" type="password" name="pwd" placeholder="输入登陆密码" />
 					 </div>
                 	 <div class="login-forget">
                 	 	<a href="">忘记密码？</a>
                 	 </div>
                 	 <div class="login-botton">
-                	 	<input type="submit" value="立即登录" class="btn">
+                	 	<input onclick="login()" type="submit" value="立即登录" class="btn">
                 	 </div>
                 	 <p class="login-footer">
                 	 	<a href="">没有账号去注册&gt&gt</a>
                 	 <p>
-	            </form>
+
             </div>
   		</div>
     </body>
+<script type="text/javascript">
+	function login() {
+		var usertel=$("#usertel").val();
+		var userpass=$("#userpass").val();
+
+		$.ajax({
+			type: "post",
+			url: "/login",
+			contentType: "application/json;charset=UTF-8",
+			async: true,//这个默认是true 异步
+			data: JSON.stringify({
+				"usertel": usertel,
+				"userpass":userpass
+			}),
+			success: function (data) {
+                var da=eval(data);
+                if(da){
+                    alert("登录成功");
+                    location.href="index.html";
+                }else{
+                    alert("您输入的账号或密码失败,请重新输入");
+                }
+			}
+		});
+		alter(sessionStorage.setItem('userid',data.userid));
+	}
+</script>
 </html>

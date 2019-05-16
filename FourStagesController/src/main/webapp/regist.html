@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/home.js"></script>
 <script type="text/javascript" src="js/ppcommon.js"></script>
+<script type="text/javascript" src="js/jquery.params.js"></script>
 </head>
 <style type="text/css">
   @media screen and (min-width: 1380px){
@@ -120,7 +121,7 @@
           				<span class="c-red">*</span>昵称 ：
           			</div>
           			<div class="input-box">
-          				<input type="text" placeholder="输入昵称" name="username" class="ipt" style="width:92%;">
+          				<input id="inputName" type="text" placeholder="输入昵称" name="username" class="ipt" style="width:92%;">
           			</div>
       		    </div>
       		    <div class="item">
@@ -128,7 +129,7 @@
           				<span class="c-red">*</span>账号 ：
           			</div>
           			<div class="input-box">
-          				<input type="text" placeholder="手机号或者邮箱" name="phone" class="ipt" style="width:92%;">
+          				<input id="inputAccout" type="text" placeholder="手机号或者邮箱" name="phone" class="ipt" style="width:92%;">
           			</div>
       		    </div>
       		    <div class="item">
@@ -136,23 +137,8 @@
           				<span class="c-red">*</span>登录密码 ：
           			</div>
           			<div class="input-box">
-          				<input onpaste="return false" type="password" placeholder="输入密码" id="password" name="password" class="ipt"  style="width:92%;">
+          				<input id="inputPass" onpaste="return false" type="password" placeholder="输入密码" id="password" name="password" class="ipt"  style="width:92%;">
           			</div>
-        			<!-- <div class="level level-1">
-        				<span class="n3"></span>
-        				<span class="n2"></span>
-        				<span class="n1">弱</span>
-        			</div>
-        			<div class="level level-2">
-        				<span class="n3"></span>
-        				<span class="n2">中</span>
-        				<span class="n1"></span>
-        			</div>
-        			<div class="level level-3">
-        				<span class="n3">强</span>
-        				<span class="n2"></span>
-        				<span class="n1"></span>
-        			</div> -->
       		    </div>
       		    <div class="item">
           			<div class="label">
@@ -160,9 +146,27 @@
           			</div>
           			<div class="input-box">
           				<input type="hidden" name="confirmPassword2" value="">
-          				<input onpaste="return false" type="password" placeholder="再次输入密码" id="confirmPassword" name="confirmPassword" class="ipt"  style="width:92%;">
+          				<input id="confirmPassword" onpaste="return false" type="password" placeholder="再次输入密码"  name="confirmPassword" class="ipt"  style="width:92%;">
           			</div>
       		    </div>
+                  <div class="item">
+                      <div class="label">
+                          <span class="c-red">*</span>姓名 ：
+                      </div>
+                      <div class="input-box">
+                          <input type="hidden" name="confirmPassword2">
+                          <input id="realName" onpaste="return false"  placeholder="请输入真实姓名"  name="confirmPassword" class="ipt"  style="width:92%;">
+                      </div>
+                  </div>
+                  <div class="item">
+                      <div class="label">
+                          <span class="c-red">*</span>身份证号 ：
+                      </div>
+                      <div class="input-box">
+                          <input type="hidden" name="confirmPassword2" value="">
+                          <input id="realIdentify" onpaste="return false" placeholder="再次输入密码"  name="confirmPassword" class="ipt"  style="width:92%;">
+                      </div>
+                  </div>
                 <div class="checkbox-box">
                 	<label class="f12 input-box" style="border:none;width:100%">
                   <input type="checkbox" name="is_server" value="1" id="is_server">
@@ -172,7 +176,7 @@
               	</label>
                 </div>
       		    <div class="btn-box">	
-          			<a href="regist_yz_phone.html"><input type="button" id="reg_step2" name="reg_step2" value="立即注册"  class="ui-btn"></a>
+          			<input onclick="lijizhuce()" type="button" id="reg_step2" name="reg_step2" value="立即注册"  class="ui-btn">
           			<div class="tx-login login-footer">
           				已有账号？<a href="index.html" style="display:inline-block;color:#000";>去登录</a>
           			</div>
@@ -221,4 +225,43 @@
   <p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
 </div>
 </body>
+<script type="text/javascript">
+    function lijizhuce() {
+        var username=$("#inputName").val();
+        var usertel=$("#inputAccout").val();
+        var userpass=$("#inputPass").val();
+        var chongfuuserpass=$("#confirmPassword").val();
+        var userrname=$("#realName").val();
+        var userdentify=$("#realIdentify").val();
+
+        if(userpass==chongfuuserpass){
+            //密码确认成功
+            $.ajax({
+                type: "post",
+                url: "/zhuce",
+                contentType: "application/json;charset=UTF-8",
+                async: true,//这个默认是true 异步
+                data: JSON.stringify({
+                    "username": username,
+                    "usertel": usertel,
+                    "userpass": userpass,
+                    "userrname": userrname,
+                    "useridentify": userdentify
+                }),
+                success: function (data) {
+                    da=eval(data);
+                   if(da){
+                       alert("注册成功");
+                       location.href="index.html";
+                   }else {
+                       alert("注册失败,请重新注册");
+                   }
+                }
+            })
+
+        }else{
+            alert("您输入的密码不匹配,请重新输入");
+        }
+    }
+</script>
 </html>

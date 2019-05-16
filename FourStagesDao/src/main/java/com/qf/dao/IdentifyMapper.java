@@ -1,7 +1,10 @@
+package com.qf.dao;
+
 import com.qf.pojo.Identify;
 import com.qf.pojo.IdentifyExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface IdentifyMapper {
     int countByExample(IdentifyExample example);
@@ -25,4 +28,6 @@ public interface IdentifyMapper {
     int updateByPrimaryKeySelective(Identify record);
 
     int updateByPrimaryKey(Identify record);
+    //通过电话号码tel 来查询一个真的身份认证对象
+    Identify getIdentifyTel(String identifyTel);
 }

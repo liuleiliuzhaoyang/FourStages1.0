@@ -9,8 +9,12 @@
 
     <!-- <dubbo:registry address="zookeeper://192.168.1.117:2181" /> -->
     <dubbo:registry address="zookeeper://10.12.159.134:2181" />
+    <bean id="renzheng" class="com.qf.service.IdentifyServiceImpl"></bean>
 
     <dubbo:protocol name="dubbo" port="20880" />
 
     <dubbo:service interface="com.qf.service.UserInfoService" ref="userInfoServiceImpl"/>
+    <dubbo:service interface="com.qf.service.BankcartService" ref="bankcartServiceImpl"/>
+    <dubbo:service interface="com.qf.service.IdentifyService" ref="renzheng"/>
+    <dubbo:service interface="com.qf.service.AccountService" ref="accountServiceImpl"/>
 </beans>

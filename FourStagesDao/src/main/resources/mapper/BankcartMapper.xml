@@ -320,4 +320,29 @@
       bcflag2 = #{bcflag2,jdbcType=VARCHAR}
     where bcid = #{bcid,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectByPrimaryKeyUserid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from bankcart
+    where userid = #{userid,jdbcType=INTEGER}
+  </select>
+
+
+  <update id="updatBankcartuserid" parameterType="com.qf.pojo.Bankcart">
+    update bankcart
+    set
+    bccode = #{bccode,jdbcType=VARCHAR},
+      bcname = #{bcname,jdbcType=VARCHAR},
+      bcprovince = #{bcprovince,jdbcType=VARCHAR},
+      bccity = #{bccity,jdbcType=VARCHAR},
+      bcbranch = #{bcbranch,jdbcType=VARCHAR},
+      bcchongzhimoney = #{bcchongzhimoney,jdbcType=VARCHAR},
+      bcchongtime = #{bcchongtime,jdbcType=DATE},
+      bcmoney = #{bcmoney,jdbcType=DOUBLE},
+      bcflag = #{bcflag,jdbcType=VARCHAR},
+      bcflag2 = #{bcflag2,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=INTEGER}
+  </update>
 </mapper>

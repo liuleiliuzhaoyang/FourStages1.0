@@ -10,6 +10,7 @@
     <link href="css/site.css" rel="stylesheet" type="text/css" />
     <link href="css/style2.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.js"></script>
     <script type="text/javascript" src="js/ppcommon.js"></script>
     <title>银行卡管理</title>
 </head>
@@ -130,7 +131,7 @@
                                 <span class="ico-home-23"></span>
                             </h4>
                             <ul class="p_zh_li_none" style="display:block">
-                                <li><a href="#">个人基本资料</a></li>
+                                <li><a href="geren.html">个人基本资料</a></li>
                                 <li><a href="bankmanage.html" class="click">银行卡管理</a></li>
                             </ul>
                         </li>
@@ -140,34 +141,33 @@
                 	<div class="bankmanage">
                 		<div class="bankmanage-tip">银行卡管理</div>
                 		<div class="bankmanage-main bankmanage_suc_main">
-                			<dl>
-                        		<dt>
-                        			<h3>充值银行卡</h3>（充值银行卡为移动端绑定的快捷支付银行卡，在此模块可解除绑定
-                        		</dt>
-								<p>暂无绑定银行卡</p>
-		                    </dl>
 		                    <dl>
 		                        <dt>
-		                        	<h3>提现银行卡</h3>（提现银行卡为平台余额提现时所转入的银行卡，目前仅支持绑定一张银行卡）
+		                        	<h3>充值提现银行卡</h3>（银行卡为平台余额提现时所转入的银行卡，目前仅支持绑定一张银行卡）
 		                        </dt>
 		                        <dd>
 		                            <span class="bankmanage_add_suc">
 		                            	<div class="add_suc_top">
 	                                        <div class="fl">
-	                                            <img src="img/102m.jpg">工商银行                                
+	                                            <img src="img/102m.jpg">
+                                                <p id="a1"></p>
 	                                        </div>
 	                                        <div class="fr">
-	                                            尾号 344<span class="add_suc_top_tag">借记卡</span>
+	                                            <span class="add_suc_top_tag">借记卡</span>
 	                                        </div>
                                     	</div>
                                     	<div class="add_suc_btm">
                                         	<div>
-                                        		<span class="fl">银行卡卡号：6222******344</span>
-                                        		<a class="fr" href="bankmanage_update.html" style="color:#f48484;">
-                                        			修改
-                                        		</a>
+                                                <span value="" class="fl">银行卡卡号：<span id="a2" value=""></span></span>
+                                                <!--<a class="fr" href="#" ="kaxiugai(userid)"  style="color:#f48484">-->
+                                        			<!--修改-->
+                                        		<!--</a>-->
+                                                <button class="fr" onclick="xiugaika()">修改</button>
                                     			<br>
-                                    			姓名：卢******
+                                                <div>
+                                                    户名:<span  id="a3"></span>
+                                                </div>
+
                                         	</div>
                                     	</div>
 		                            </span>
@@ -217,5 +217,39 @@
   </div>
   <p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
     </div>
+<script type="text/javascript">
+
+    var ss;
+    var user;
+    var code;
+    $.ajax({
+        type:"post",
+        url:"/selecttBankcartByIdUserIdaa",
+        data:"json",
+        async:true,
+        success:function (data) {
+            // alert(d.deliveryI);
+            //alert(data.bcname)
+            $("#a1").html(data.bcbranch);
+            $("#a2").html(data.bccode);
+            $("#a3").html(data.bcname);
+            ss = data.userid;
+            code = data.bccode;
+            user = data.bcname;
+            alert(bcname);
+
+        }
+    });
+    function xiugaika() {
+        alert("1111111111");
+        alert(ss);
+        sessionStorage.setItem('id',ss)
+        sessionStorage.setItem('user',user);
+        sessionStorage.setItem('code',code);
+        alert(sessionStorage.setItem('code',code));
+
+        window.location.href="bankmanage_update.html";
+    }
+</script>
 </body>
 </html>

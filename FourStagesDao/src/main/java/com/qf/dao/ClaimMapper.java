@@ -1,8 +1,9 @@
 package com.qf.dao;
 
+import java.util.List;
+
 import com.qf.pojo.Claim;
 import com.qf.pojo.ClaimExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface ClaimMapper {

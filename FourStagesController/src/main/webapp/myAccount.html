@@ -11,6 +11,7 @@
     <link href="css/style2.css" rel="stylesheet" type="text/css" />
     <link href="css/date.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.js"></script>
     <script type="text/javascript" src="js/ppcommon.js"></script>
     <script type="text/javascript" src="js/date.js"></script>
     <title>我的账户</title>
@@ -137,7 +138,7 @@
                                 <span class="ico-home-23" style="display:none;"></span>
                             </h4>
                             <ul class="p_zh_li_none">
-                                <li><a href="#">个人基本资料</a></li>
+                                <li><a href="geren.html">个人基本资料</a></li>
                                 <li><a href="bankmanage.html">银行卡管理</a></li>
                             </ul>
                         </li>
@@ -198,21 +199,21 @@
 		                    	<div class="p_money_1">
 		                    		<h4>累计金额收益</h4>
 			                    	<span class="qian_icon">￥</span>
-			                    	<span class="qian_des">0.00</span>
+			                    	<span class="qian_des" id="q1"></span>
 		                    	</div>
 		                    </li>
 		                    <li>
 		                    	<div class="p_money_1">
 		                    		<h4>冻结金额</h4>
 			                    	<span class="qian_icon">￥</span>
-			                    	<span class="qian_des">0.00</span>
+			                    	<span class="qian_des" id="q2"></span>
 		                    	</div>
 		                    </li>
 		                    <li class="p_money_btn">
 		                    	<div class="p_money_2">
 		                    		<h4>可用余额</h4>          
 			                    	<span class="qian_icon">￥</span>
-			                    	<span class="qian_des">0.83</span> 	
+			                    	<span class="qian_des" id="q3"></span>
 		                    	</div>
                           <a href="recharge.html"><span class="p_money_btn1">充值</span></a>
 		                    	<a href="#"><span class="p_money_btn2">提现</span></a>
@@ -240,22 +241,22 @@
                         <ul class="p_zc_sz">
                           <li>
                             <span class="p_sz_qian">￥</span>
-                            <span class="p_sz_qian_des">101.75</span>
+                            <span class="p_sz_qian_des" id="q4"></span>
                           </li>
                           <li>=</li>
                           <li>
                             <span class="p_sz_qian">￥</span>
-                            <span class="p_sz_qian_des">0.83</span>
+                            <span class="p_sz_qian_des" id="q5"></span>
                           </li>
                           <li>+</li>
                           <li>
                             <span class="p_sz_qian">￥</span>
-                            <span class="p_sz_qian_des">100.92</span>
+                            <span class="p_sz_qian_des" id="q6"></span>
                           </li>
                           <li>-</li>
                           <li>
                             <span class="p_sz_qian">￥</span>
-                            <span class="p_sz_qian_des">0.00</span>
+                            <span class="p_sz_qian_des" id="q7"></span>
                           </li>
                         </ul>
                       </li>
@@ -455,5 +456,27 @@
   </div>
   <p class="footer_bottom">&copy;2015I车保网贷金融服务有限公司 京ICP证140334号</p>
     </div>
+</div>
+<script type="text/javascript">
+    $.ajax({
+        type:"post",
+        url:"/selectSiBiaoLianChan",
+        data:"json",
+        async:false,
+        success:function (data) {
+            var data = eval(data[0]);
+            // alert(d.deliveryI);
+            //alert(data.bcname)
+            console.log(data);
+            $("#q1").html(data.proinfomoney*data.projectlilv);
+            $("#q2").html(data.accountfrostmoney);
+            $("#q3").html(data.accountusermoney);
+            $("#q4").html(data.accountusermoney+(data.proinfomoney+(data.proinfomoney*data.projectlilv)));
+            $("#q5").html(data.accountusermoney);
+            $("#q6").html(data.proinfomoney+(data.proinfomoney*data.projectlilv));
+            $("#q7").html(data.accountdaihuanjine);
+        }
+    });
+</script>
 </body>
 </html>

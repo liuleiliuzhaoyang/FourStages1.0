@@ -305,4 +305,10 @@
       accountflag3 = #{accountflag3,jdbcType=DOUBLE}
     where accountid = #{accountid,jdbcType=INTEGER}
   </update>
+
+
+
+  <select id="selectSiBiaoLianChan" resultType="com.qf.dto.AccountDto">
+          select * from account ac, project pr,projectinfo pro,userinfo us where ac.userid = pro.userid and pr.projectid = pro.projectid and us.userid = ac.userid and ac.userid=#{userid}
+  </select>
 </mapper>
